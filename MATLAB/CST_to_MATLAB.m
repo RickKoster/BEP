@@ -5,44 +5,58 @@
 
 
 %%
-
-path(path,'D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
-filename_par = 'IBM_sharp_edge_segmented_pad2_Parameterlist.txt';
-filename_data = 'data_incpad.txt';
-filename_data_pads = 'data_pads.txt';
-filename_data_substrate = 'data_substrate.txt';
-filename_data_ground = 'data_ground.txt';
+path_to_folder = 'D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\';
+path(path,path_to_folder);
+filenames = {};
+filenames.par = 'IBM_sharp_edge_segmented_pad2_Parameterlist.txt';
+filenames.data_top = 'data_incpad.txt';
+filenames.data_pads = 'data_pads.txt';
+filenames.data_substrate = 'data_substrate.txt';
+filenames.data_substrate_normal = 'data_substrate_normal.txt';
+filenames.data_substrate_tangential = 'data_substrate_tangential.txt';
+filenames.data_ground = 'data_ground.txt';
 
 nrOfPar = 21; %check number of parameters used in CST
 
-data = importdata(filename_data);
-data_pads = importdata(filename_data_pads);
-data_substrate = importdata(filename_data_substrate);
-data_ground = importdata(filename_data_ground);
+%Store all data tables in cell array
+Data = {};
+Data.Top = importdata(filenames.data_top);
+Data.Ground = importdata(filenames.data_ground);
+Data.Pads = importdata(filenames.data_pads);
+Data.Substrate = importdata(filenames.data_substrate);
+Data.Substrate_normal = importdata(filenames.data_substrate_normal);
+Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
 
 
 
-par = importmodelparameters(filename_par, nrOfPar);
+
+
+par = importmodelparameters(filenames.par, nrOfPar);
 
 rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
 %% Separating different interfaces
-MA_ground = intersect(data, data_ground,'rows');
+MA_ground = intersect(Data.Top, Data.Ground,'rows');
 
-MS_ground = intersect(data_ground,data_substrate,'rows');
+MS_ground = intersect(Data.Ground,Data.Substrate,'rows');
 
 %MS2 = intersect(data_pads,data_substrate,'rows');
 
-MS = data_pads(data_pads.zum == 0, :);
-MA = data_pads(data_pads.zum ~= 0, :);
+MS = Data.Pads(Data.Pads.zum == 0, :);
+MA = Data.Pads(Data.Pads.zum ~= 0, :);
 
-SA_temp = setdiff(data,data_pads);
-SA_temp = setdiff(SA_temp,data_ground);
+SA_temp = setdiff(Data.Top,Data.Pads);
+SA_temp = setdiff(SA_temp,Data.Ground);
 SA = SA_temp(SA_temp.zum == 0,:);
 clear SA_temp;
 
-%% Adding E^2 
-MA_squared = MA(:,[1,2,3,10]);
-[m,n] = size(MA_squared);
+%% Adding E^2 and Energy per m
 MA_temp = MA(:,[4,5,6,7,8,9]);
-Esquared = rowfun(@(ExReVm, EyReVm, EzReVm, ExImVm, EyImVm, EzImVm) sumsqr([ExReVm EyReVm EzReVm ExImVm EyImVm EzImVm]),MA_temp, 'InputVariables', {'ExReVm' 'EyReVm' 'EzReVm' 'ExImVm' 'EyImVm' 'EzImVm'}, 'OutputVariableName', 'Esquared');
-MA_temp= [MA_temp Esquared];
+%Esquared = rowfun(@(ExReVm, EyReVm, EzReVm, ExImVm, EyImVm, EzImVm) sumsqr([ExReVm EyReVm EzReVm ExImVm EyImVm EzImVm]),MA_temp, 'InputVariables', {'ExReVm' 'EyReVm' 'EzReVm' 'ExImVm' 'EyImVm' 'EzImVm'}, 'OutputVariableName', 'Esquared');
+Esquared = getEsquared(MA_temp);
+MA_squared = [MA Esquared];
+%E_energy = getEnergy(MA_squared,3,Materials(1).vacuum);
+E_energy_perm = rowfun(@(Areaum2, Esquared) Materials(1).vacuum*.5*Areaum2*(10^-12)*Esquared,MA_squared, 'InputVariables', {'Areaum2' 'Esquared'}, 'OutputVariableName', 'Energyperm');
+MA_squared = [MA_squared E_energy_perm];
+
+Energy_MA = sum(MA_squared.Energyperm)*3*10^-9;
+
