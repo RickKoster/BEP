@@ -1,0 +1,30 @@
+# ===============================================================
+# File Created on:
+# 23/02/2016 14:13:26
+# Project File:
+# D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2.cst
+# ===============================================================
+# Total Number of Parameters: 21
+# ===============================================================
+IBM_pad_l1			7.5			
+IBM_pad_l2			60			
+IBM_pad_w1			2			
+IBM_pad_w2			450			
+etch_angle			pi/100			
+etch_depth			100			
+etch_underetch			.4			
+lead_h			.002			
+local_mesh_size			1			
+pad_dist			1.5			
+pad_edge_rad			1			
+pad_edgeradius			.1			
+pad_h			.01			
+pad_l			500			
+pad_seg_size			.0125			
+pad_w			250			
+slot_edge			650			
+square_edge			1			
+substrate_h			520			
+substrate_l			3000			
+substrate_w			3000			
+# ===============================================================
