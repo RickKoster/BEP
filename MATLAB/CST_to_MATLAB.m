@@ -1,6 +1,9 @@
 %%IBM_hexa 5.6 GHz
 
 %%Import from .csv file
+%note: integral of electric energy on pad face (MA) by CST:
+%3.128545333e-008 multiply by layer thickness > 
+%3.128545333e-008 * 3*10^(-9) = 9.3856e-17
 
 
 
@@ -48,6 +51,14 @@ SA_temp = setdiff(Data.Top,Data.Pads);
 SA_temp = setdiff(SA_temp,Data.Ground);
 SA = SA_temp(SA_temp.zum == 0,:);
 clear SA_temp;
+
+%% Adding material list
+%removing material from struct: Materials = rmfield(Materials, material);
+Materials = struct;
+Materials(1).vacuum = 1;
+Materials(2).vacuum = 1;
+Materials(1).silicon = 11.48;
+Materials(2).silicon = 1;
 
 %% Adding E^2 and Energy per m
 MA_temp = MA(:,[4,5,6,7,8,9]);
