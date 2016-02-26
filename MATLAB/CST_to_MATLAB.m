@@ -8,7 +8,8 @@
 
 
 %%
-path_to_folder = 'D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\';
+path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\';
+%path_to_folder = 'D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\';
 path(path,path_to_folder);
 filenames = {};
 filenames.par = 'IBM_sharp_edge_segmented_pad2_Parameterlist.txt';
@@ -35,8 +36,8 @@ Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
 
 
 par = importmodelparameters(filenames.par, nrOfPar);
-
-rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
+rmpath('C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\');
+%rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
 %% Separating different interfaces
 MA_ground = intersect(Data.Top, Data.Ground,'rows');
 
