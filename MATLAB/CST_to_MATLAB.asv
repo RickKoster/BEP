@@ -14,40 +14,28 @@ path(path,path_to_folder);
 filenames = {};
 filenames.par = 'IBM_sharp_edge_segmented_pad2_Parameterlist.txt';
 filenames.data_top = 'data_incpad.txt';
-
 filenames.data_pads = 'data_pads.txt';
-filenames.data_normal_pads = 'data_pads_normal.txt';
-filenames.data_tangential_pads = 'data_pads_tangential.txt';
-
 filenames.data_substrate = 'data_substrate.txt';
 filenames.data_substrate_normal = 'data_substrate_normal.txt';
 filenames.data_substrate_tangential = 'data_substrate_tangential.txt';
-
 filenames.data_ground = 'data_ground.txt';
-filenames.data_ground_normal = 'data_ground_normal.txt';
-filenames.data_ground_tangential = 'data_ground_tangential.txt';
 
 nrOfPar = 21; %check number of parameters used in CST
 
 %Store all data tables in cell array
 Data = {};
 Data.Top = importdata(filenames.data_top);
-
 Data.Ground = importdata(filenames.data_ground);
-Data.Ground_normal = importdata(filenames.data_ground_normal);
-Data.Ground_tangential = importdata(filenames.data_ground_tangential);
-
 Data.Pads = importdata(filenames.data_pads);
-Data.Pads_normal = importdata(filenames.data_pads_normal);
-Data.Pads_tangential = importdata(filenames.data_pads_tangential);
-
-
 Data.Substrate = importdata(filenames.data_substrate);
 Data.Substrate_normal = importdata(filenames.data_substrate_normal);
 Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
 
-par = importmodelparameters(filenames.par, nrOfPar);
 
+
+
+
+par = importmodelparameters(filenames.par, nrOfPar);
 rmpath('C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\');
 %rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
 %% Separating different interfaces
@@ -85,7 +73,7 @@ E_energy = getEnergy(MA_squared,3,Materials(1).vacuum);
 %Energy_MA = sum(MA_squared.Energyperm)*3*10^-9;
 
 
-MS_normal_temp = intersect(Data.Pads_normal, Data.Substrate_normal,'rows');
+MS_normal_temp = intersect(Data.Pads_normal Data.Substrate_normal,'rows');
 
 
 
