@@ -84,10 +84,10 @@ Materials(2).silicon = 1;
 Materials(1).MA = 10;
 Materials(2).MA = 1;
 Materials(3).MA = 3*10^-9;
-Materials(1).MS = 15;
+Materials(1).MS = 7.5;
 Materials(2).MS = 1;
 Materials(3).MS = 3*10^-9;
-Materials(1).SA = 20;
+Materials(1).SA = 3.9;
 Materials(2).SA = 1;
 Materials(3).SA = 3*10^-9;
 
