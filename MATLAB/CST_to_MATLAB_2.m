@@ -9,50 +9,50 @@
 
 %%
 %path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\';
-path_to_folder = 'D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\';
+path_to_folder = 'D:\CST projects\Rick\Yale\Yale_rounding_edges\';
 path(path,path_to_folder);
 filenames = {};
-filenames.par = 'IBM_sharp_edge_segmented_pad2_Parameterlist.txt';
-filenames.data_top = 'data_incpad.txt';
+filenames.par = 'Yale_rounding_edges_temp_Parameterlist.txt';
+%filenames.data_top = 'data_incpad.txt';
 
 filenames.data_pads = 'data_pads.txt';
-filenames.data_pads_normal = 'data_pads_normal.txt';
-filenames.data_pads_tangential = 'data_pads_tangential.txt';
+% filenames.data_pads_normal = 'data_pads_normal.txt';
+% filenames.data_pads_tangential = 'data_pads_tangential.txt';
 
 filenames.data_substrate = 'data_substrate.txt';
-filenames.data_substrate_normal = 'data_substrate_normal.txt';
-filenames.data_substrate_tangential = 'data_substrate_tangential.txt';
+% filenames.data_substrate_normal = 'data_substrate_normal.txt';
+% filenames.data_substrate_tangential = 'data_substrate_tangential.txt';
 
 filenames.data_ground = 'data_ground.txt';
-filenames.data_ground_normal = 'data_ground_normal.txt';
-filenames.data_ground_tangential = 'data_ground_tangential.txt';
+% filenames.data_ground_normal = 'data_ground_normal.txt';
+% filenames.data_ground_tangential = 'data_ground_tangential.txt';
 
-nrOfPar = 21; %check number of parameters used in CST
+nrOfPar = 22; %check number of parameters used in CST
 
 %Store all data tables in cell array
 Data = {};
-Data.Top = importdata(filenames.data_top);
+% Data.Top = importdata(filenames.data_top);
 
 Data.Ground = importdata(filenames.data_ground);
-Data.Ground_normal = importdata(filenames.data_ground_normal);
-Data.Ground_tangential = importdata(filenames.data_ground_tangential);
+% Data.Ground_normal = importdata(filenames.data_ground_normal);
+% Data.Ground_tangential = importdata(filenames.data_ground_tangential);
 
 Data.Pads = importdata(filenames.data_pads);
-Data.Pads_normal = importdata(filenames.data_pads_normal);
-Data.Pads_tangential = importdata(filenames.data_pads_tangential);
+% Data.Pads_normal = importdata(filenames.data_pads_normal);
+% Data.Pads_tangential = importdata(filenames.data_pads_tangential);
 
 
 Data.Substrate = importdata(filenames.data_substrate);
-Data.Substrate_normal = importdata(filenames.data_substrate_normal);
-Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
+% Data.Substrate_normal = importdata(filenames.data_substrate_normal);
+% Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
 
 par = importmodelparameters(filenames.par, nrOfPar);
 
 %rmpath('C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\');
-rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
+rmpath('D:\CST projects\Rick\Yale\Yale_rounding_edges\');
 
 %% Separating different interfaces
-MA_ground = intersect(Data.Top, Data.Ground,'rows');
+MA_ground = intersect(Data.Substrate, Data.Ground,'rows');
 
 MS_ground = intersect(Data.Ground,Data.Substrate,'rows');
 
@@ -61,7 +61,7 @@ MS_ground = intersect(Data.Ground,Data.Substrate,'rows');
 MS = Data.Pads(Data.Pads.zum == 0, :);
 MA = Data.Pads(Data.Pads.zum ~= 0, :);
 
-SA_temp = setdiff(Data.Top,Data.Pads);
+SA_temp = setdiff(Data.Substrate,Data.Pads);
 SA_temp = setdiff(SA_temp,Data.Ground);
 SA = SA_temp(SA_temp.zum == 0,:);
 clear SA_temp;
@@ -112,6 +112,7 @@ p = struct;
 p.MA = E_energy_MA/E_tot;
 p.MS = E_energy_MS/E_tot;
 p.SA = E_energy_SA/E_tot;
+
 
 
 %% Adding E^2 and Energy per m

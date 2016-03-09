@@ -109,10 +109,7 @@ E_energy_SA = getEnergySA(SA, Materials(3).SA, Materials(1).SA);
 %% Calculate Ratios
 E_tot = E_energy_MA + E_energy_MS + E_energy_SA; 
 p = struct;
-p.MA = E_energy_MA/E_tot;
-p.MS = E_energy_MS/E_tot;
-p.SA = E_energy_SA/E_tot;
-
+p.MA = 
 
 %% Adding E^2 and Energy per m
 MA_temp = MA(:,[4,5,6,7,8,9]);
