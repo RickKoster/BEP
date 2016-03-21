@@ -1,0 +1,57 @@
+\chapter{Theory}
+
+\section{The quantum bit}
+A quantum bit, often called qubit, is...
+
+\subsection{The transmon qubit}
+The qubit under investigation during this project is the so called transmon qubit.
+
+\section{LC-circuits}
+The transmon qubit can be treated as a simple LC-circuit.
+\begin{figure}
+	\begin{center}
+		\begin{circuitikz}
+			\draw (0,0)
+			to[open,*-,v=$U_q$] (0,2) % The voltage source
+			to[short,*-] (2,2)
+			to[L=$L_1$] (2,0) % The inductor
+			to[short] (0,0);
+			\draw (2,2)
+			to[short] (4,2)
+			to[C=$C_1$] (4,0)
+			to[short] (2,0);
+		\end{circuitikz}
+		\caption{A simple parallel LC-circuit}
+	\end{center}
+\end{figure}
+
+\subsection{Energy in an LC-circuit}
+The total energy stored in an LC-circuit at any time can be calculated as follows:
+\begin{equation}
+W=\frac{1}{2}CV^{2}
+\end{equation}
+
+\section{Electric fields}
+\subsection{Perfect Electric Conductor}
+As the qubit is supercooled to temperatures of only a few mK, the metal in the qubit is treated as a Perfect Electric Conductor (PEC).
+\subsection{Continuity rules}
+\subsection{Stored energy}
+The energy stored in the Electric field in a material can be calculated using equation \eqref{eq:energy}
+\begin{equation} \label{eq:energy}
+	W = \frac{\epsilon}{2}\int{|E|}^{2}dV
+\end{equation}
+
+\section{Sources of decoherence}
+In order for the qubit to be coherent \ldots The source in question during this project is the layers of lossy material in the system.
+\subsection{Lossy materials}
+During production of qubits, different procedures introduce lossy materials to the structure.  
+\subsubsection{Two-Level Systems}
+
+\section{The participation ratio}
+In order to determine what kind of structure design may improve coherence time the participation ratio of lossy layers can be calculated. If the assumption is made that the Electric field remains constant inside the lossy layer equation~\eqref{eq:energy} can be rewritten as follows:
+\begin{equation}\label{eq:energy_layer}
+W = \frac{\epsilon}{2}t\int{|E|}^{2}dA
+\end{equation}
+Where \(\epsilon\) is the permittivity of the material and \(t\) is the thickness of the lossy layer. Furthermore, \(A\) is the surface area of the lossy layer.
+
+
