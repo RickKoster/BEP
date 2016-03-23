@@ -53,16 +53,14 @@ Data.Substrate = importdata(filenames.data_substrate);
 % rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
 
 %% Separating different interfaces
-MA_ground = Data.ground
-
-MS_ground = intersect(Data.Ground,Data.Substrate,'rows');
+MA_ground = Data.Ground;
 
 %MS2 = intersect(data_pads,data_substrate,'rows');
 
 MS = Data.Pads(Data.Pads.zum == 0, :);
 MA = Data.Pads(Data.Pads.zum ~= 0, :);
 
-SA_temp = setdiff(Data.Top,Data.Pads);
+SA_temp = setdiff(Data.Substrate,Data.Pads);
 SA_temp = setdiff(SA_temp,Data.Ground);
 SA = SA_temp(SA_temp.zum == 0,:);
 clear SA_temp;
@@ -108,12 +106,16 @@ SA = [SA getEsquaredComp(SA, [1 1 0], 'EsquaredTangential')];
 E_energy_SA = getEnergySA(SA, Materials(3).SA, Materials(1).SA);
 
 %% Calculate Ratios
-E_tot = E_energy_MA + E_energy_MS + E_energy_SA; 
+C = 60e-15;
+V = 14;
+E_tot = .5*C*V^2;
 p = struct;
 p.MA = E_energy_MA/E_tot;
 p.MS = E_energy_MS/E_tot;
 p.SA = E_energy_SA/E_tot;
 
+%% Exclude junction region
+SA_junction = SA(SA.zum == 0 && abs(SA.xum) <= 2 && abs(SA.yum) <= 1.5, :);
 
 %% Adding E^2 and Energy per m
 MA_temp = MA(:,[4,5,6,7,8,9]);

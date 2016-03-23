@@ -32,28 +32,28 @@ nrOfPar = 21; %check number of parameters used in CST
 
 %Store all data tables in cell array
 Data = {};
-% Data.Top = importdata(filenames.data_top);
+Data.Top = importdata(filenames.data_top);
 
 Data.Ground = importdata(filenames.data_ground);
-% Data.Ground_normal = importdata(filenames.data_ground_normal);
-% Data.Ground_tangential = importdata(filenames.data_ground_tangential);
+Data.Ground_normal = importdata(filenames.data_ground_normal);
+Data.Ground_tangential = importdata(filenames.data_ground_tangential);
 
 Data.Pads = importdata(filenames.data_pads);
-% Data.Pads_normal = importdata(filenames.data_pads_normal);
-% Data.Pads_tangential = importdata(filenames.data_pads_tangential);
+Data.Pads_normal = importdata(filenames.data_pads_normal);
+Data.Pads_tangential = importdata(filenames.data_pads_tangential);
 
 
 Data.Substrate = importdata(filenames.data_substrate);
-% Data.Substrate_normal = importdata(filenames.data_substrate_normal);
-% Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
+Data.Substrate_normal = importdata(filenames.data_substrate_normal);
+Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
 
-% par = importmodelparameters(filenames.par, nrOfPar);
+par = importmodelparameters(filenames.par, nrOfPar);
 
 %rmpath('C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\');
 % rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
 
 %% Separating different interfaces
-MA_ground = Data.ground
+MA_ground = intersect(Data.Top, Data.Ground,'rows');
 
 MS_ground = intersect(Data.Ground,Data.Substrate,'rows');
 

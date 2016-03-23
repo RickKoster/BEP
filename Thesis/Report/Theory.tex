@@ -1,13 +1,10 @@
 \chapter{Theory}
 
-\section{The quantum bit}
-A quantum bit, often called qubit, is...
-
-\subsection{The transmon qubit}
-The qubit under investigation during this project is the so called transmon qubit.
+\section{The transmon qubit}
+The qubit under investigation during this project is the so called transmon qubit. A transmon qubit consists of 
 
 \section{LC-circuits}
-The transmon qubit can be treated as a simple LC-circuit.
+The transmon qubit can be treated as a simple LC-circuit. The Josephson junction is replaced by an inductor and the different capacitors are replaced by an single equivalent capacitor. The resulting simplified system can be seen in figure~\ref{fig:LCcircuit}.
 \begin{figure}
 	\begin{center}
 		\begin{circuitikz}
@@ -22,14 +19,16 @@ The transmon qubit can be treated as a simple LC-circuit.
 			to[short] (2,0);
 		\end{circuitikz}
 		\caption{A simple parallel LC-circuit}
-	\end{center}
+		\label{fig:LCcircuit}
+		\end{center}
 \end{figure}
 
 \subsection{Energy in an LC-circuit}
-The total energy stored in an LC-circuit at any time can be calculated as follows:
+In order to determine the participation ratio of the lossy layers in storing energy in the system, the total energy must be know. The total energy stored in an LC-circuit at any time can be calculated as follows:
 \begin{equation}
 W=\frac{1}{2}CV^{2}
 \end{equation}
+Where \(C\) is the total capacitance of the system and \(V\) the voltage over the systems.
 
 \section{Electric fields}
 \subsection{Perfect Electric Conductor}
@@ -44,11 +43,11 @@ The energy stored in the Electric field in a material can be calculated using eq
 \section{Sources of decoherence}
 In order for the qubit to be coherent \ldots The source in question during this project is the layers of lossy material in the system.
 \subsection{Lossy materials}
-During production of qubits, different procedures introduce lossy materials to the structure.  
+During production of qubits, different procedures introduce lossy materials to the structure. An important property of each of these materials is their permittivity. It will determine the strength of the field and the energy stored inside the layers.
 \subsubsection{Two-Level Systems}
 
 \section{The participation ratio}
-In order to determine what kind of structure design may improve coherence time the participation ratio of lossy layers can be calculated. If the assumption is made that the Electric field remains constant inside the lossy layer equation~\eqref{eq:energy} can be rewritten as follows:
+To determine what kind of structure design may improve coherence time the participation ratio of lossy layers can be calculated. If the assumption is made that the Electric field remains constant inside the lossy layer equation~\eqref{eq:energy} can be rewritten as follows:
 \begin{equation}\label{eq:energy_layer}
 W = \frac{\epsilon}{2}t\int{|E|}^{2}dA
 \end{equation}
