@@ -8,8 +8,8 @@
 
 
 %%
-%path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\';
-path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\Final Procedure\IBM_ratio_default\';
+% path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw_Data\IBM_sharp_edge_segmented_pad2\';
+path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw_Data\Yale\Yale_ratio_rounded_6fingers_\';
 % path_to_folder = 'D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\';
 path(path,path_to_folder);
 filenames = {};
@@ -49,8 +49,7 @@ Data.Substrate = importdata(filenames.data_substrate);
 
 % par = importmodelparameters(filenames.par, nrOfPar);
 
-%rmpath('C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw Data\IBM_sharp_edge_segmented_pad2\');
-% rmpath('D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\');
+rmpath(path_to_folder);
 
 %% Separating different interfaces
 MA_ground = Data.Ground;
@@ -106,8 +105,8 @@ SA = [SA getEsquaredComp(SA, [1 1 0], 'EsquaredTangential')];
 E_energy_SA = getEnergySA(SA, Materials(3).SA, Materials(1).SA);
 
 %% Calculate Ratios
-C = 60e-15;
-V = 14;
+C = 7.03e-14;
+V = 13.85;
 E_tot = .5*C*V^2;
 p = struct;
 p.MA = E_energy_MA/E_tot;
