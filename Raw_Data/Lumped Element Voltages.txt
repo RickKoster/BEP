@@ -1,0 +1,17 @@
+Lumped Element Voltages
+
+NAME				VOLTAGE
+Yale_ratio_4_fingers		14.14
+Yale_ratio_5_fingers		14.14
+Yale_ratio_6_fingers		no lumped element!
+Yale_ratio_8fingers_		14.14
+Yale_ratio_9fingers_		no lumped element!
+
+Yale_ratio_g_20um		14.14
+Yale_ratio_g_5um_setup2		14.14
+Yale_ratio_g_10um_setup2	14.14
+
+Wang_Yale_ratio			13.97
+Wang_Yale_DRIE_ratio		13.95
+
+IBM_ratio_default		14.14
