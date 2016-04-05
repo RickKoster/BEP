@@ -1,9 +1,64 @@
 \chapter{CST procedure}
+This chapter will detail the steps that should be taken to easily set up a qubit simulation in CST. The determination of the capacitance of the qubit and the electric fields in the structure will be treated separately as the second process is more complex. Settings applicable to both processes are the frequency range and the boundaries. 
+\begin{itemize}
+	\item Under 'Simulation' click 'Frequency' and set the desired values.
+	\item Again under 'Simulation' click 'Boundaries' and set the fields as in figure \ref{}
+	\item Click 'Open Boundary...' and under 'Automatic minimum distance to structure' select 'Fraction of wavelength' and set to 8. Click 'OK'.
+\end{itemize}
 
-\section{Modeling}
+\section{The capacitance}
+As show in equation \eqref{eq:totalenergy} the capacitance of the structure must be known to calculate the total energy in the qubit. The value of the capacitance converges very quickly as the mesh is refined. This simulation should always include a Discrete Port connected to the capacitor pads.
+% 
+\subsection{Modeling}
+The qubit design can be imported to CST or created in CST itself. Figure \ref{fig:CSTdesign} shows a qubit designed in CST. It includes two metal pads connected by a discrete port and is surrounded by a metal ground sheet. 
+For the determination of the capacitance, the inductor representing the Josephson junction should be omitted from the simulation.
+\subsection{Meshing}
+The default settings for the tetrahedral meshing can be used during calculation of the capacitance. This will yield a very rough initial mesh with few mesh elements and will ensure short simulation times.
+\subsection{Post processing}
+In the post processing templates window, the capacitance of the simulated structure can be retrieved; 
+\begin{itemize}
+	\item Under 'Post Processing' select 'Template Based Post Processing'.
+	\item In the pop-up window, in the first selection box choose 'S-Parameters'.
+	\item In the second selection box choose 'Z-parameter'.
+	\item In the pop-up window check the 'C' option and click OK.
+\end{itemize}
+This will yield a 2D graph showing the capacitance of the structure as a function of frequency.
+Now include a second template;
+\begin{itemize}
+	\item In the first selection box choose 'General 1D'.
+	\item In the second selection box choose '0D or 1D Results from 1D Result (Rescale, Derivation, etc)'.
+	\item In the pop-up window select 'y at given x' and set 'Evaluate at x =' to the desired frequency. Click OK.
+\end{itemize}
+The result should be a single value of the capacitance at the required frequency.
+\subsection{Simulation setup}
+To ensure convergence of the capacitance, results from the post processing templates can be used as targets for the simulation;
+\begin{itemize}
+	\item Under 'Simulation' choose 'Setup Solver'.
+	\item Under 'Adaptive mesh refinement' make sure the 'Adaptive tertrahedral mesh refninement' is checked and click 'Properties'.
+	\item In the pop-up window under 'Number of passes' set the Maximum to at least 8.
+	\item Under 'Check after broadband calculation:' mark the 'OD result Template...' as active and select the 0D result of the capacitance from the post processing template above. 
+	\item Set the required Treshold and Checks as desired and click 'OK'.
+\end{itemize}
+This will ensure the simulation keeps refining the simulation until your demands on accuracy are met or until maximum amount of mesh refinement passes is reached. After every mesh refinement pass the results are updated and can be checked. In the Navigation Tree click 'Tables' \(\rightarrow\) '0D Results' \(\rightarrow\) 'C1,1\_0D\_yAtX'.The first result will be viewable once the first pass of the simulation is completed. When the simulation is finished the capacitance of the structure can extracted from the plot. An example is given in figure \ref{fig:}.
 
-\section{Meshing}
 
-\section{Simulation setup}
+\section{The electric field}
+Now that the capacitance of the structure is known the more extensive simulation of the electric field can be set up.
+\subsection{Modeling}
+Using equation \eqref{label} the inductance needed to reach a certain resonance frequency can be calculated. Now to include such an inductor;
+\begin{itemize}
+	\item In the simulation menu add a lumped element.
+	\item Set the element 'Type' to be 'RLC parallel'
+	\item Set the value of the inductance as calculated and leave the other values at zero.
+	\item Make sure the 'Monitor voltage and current' is checked.
+	\item Set the location as desired or use picked points.
+\end{itemize}
 
-\section{Post processing}
+next
+\begin{itemize}
+	\item Under 'Modeling' click 'Picks' choose 'Pick Edge Chain' (or use Shift+E)
+\end{itemize}
+
+\subsection{Meshing}
+\subsection{Post Processing}
+\subsection{Simulation setup}

@@ -8,48 +8,27 @@
 
 
 %%
-% path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw_Data\IBM_sharp_edge_segmented_pad2\';
-path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\Raw_Data\Yale\Yale_ratio_rounded_6fingers_\';
-% path_to_folder = 'D:\CST projects\Rick\Frequency Domain Solver\IBM_sharp_edge_segmented_pad2\';
-path(path,path_to_folder);
+path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\MATLAB';
+path(path, path_to_folder);
+
 filenames = {};
-% filenames.par = 'IBM_sharp_edge_segmented_pad2_Parameterlist.txt';
-% filenames.data_top = 'data_incpad.txt';
 
 filenames.data_pads = 'data_pads.txt';
-% filenames.data_pads_normal = 'data_pads_normal.txt';
-% filenames.data_pads_tangential = 'data_pads_tangential.txt';
-
 filenames.data_substrate = 'data_substrate.txt';
-% filenames.data_substrate_normal = 'data_substrate_normal.txt';
-% filenames.data_substrate_tangential = 'data_substrate_tangential.txt';
-
 filenames.data_ground = 'data_ground.txt';
-% filenames.data_ground_normal = 'data_ground_normal.txt';
-% filenames.data_ground_tangential = 'data_ground_tangential.txt';
 
-nrOfPar = 21; %check number of parameters used in CST
 
 %Store all data tables in cell array
+
 Data = {};
-% Data.Top = importdata(filenames.data_top);
+Data.Ground = myimportdata(filenames.data_ground);
+Data.Pads = myimportdata(filenames.data_pads);
+Data.Substrate = myimportdata(filenames.data_substrate);
 
-Data.Ground = importdata(filenames.data_ground);
-% Data.Ground_normal = importdata(filenames.data_ground_normal);
-% Data.Ground_tangential = importdata(filenames.data_ground_tangential);
-
-Data.Pads = importdata(filenames.data_pads);
-% Data.Pads_normal = importdata(filenames.data_pads_normal);
-% Data.Pads_tangential = importdata(filenames.data_pads_tangential);
-
-
-Data.Substrate = importdata(filenames.data_substrate);
-% Data.Substrate_normal = importdata(filenames.data_substrate_normal);
-% Data.Substrate_tangential = importdata(filenames.data_substrate_tangential);
-
+% nrOfPar = 21; %check number of parameters used in CST
 % par = importmodelparameters(filenames.par, nrOfPar);
 
-rmpath(path_to_folder);
+
 
 %% Separating different interfaces
 MA_ground = Data.Ground;
@@ -105,62 +84,25 @@ SA = [SA getEsquaredComp(SA, [1 1 0], 'EsquaredTangential')];
 E_energy_SA = getEnergySA(SA, Materials(3).SA, Materials(1).SA);
 
 %% Calculate Ratios
-C = 7.03e-14;
-V = 13.85;
+C = input('Capacitance of the structure: ');
+V = input('Voltage over the incutor: ');
+
 E_tot = .5*C*V^2;
 p = struct;
 p.MA = E_energy_MA/E_tot;
 p.MS = E_energy_MS/E_tot;
 p.SA = E_energy_SA/E_tot;
 
+p
+
+save('ratio', 'p', 'E_energy_MA', 'E_energy_MS', 'E_energy_SA', 'E_tot');
+
 %% Exclude junction region
-SA_junction = SA(abs(SA.xum) <= 2,:); % && abs(SA.xum) <= 2 && abs(SA.yum) <= 1.5, :);
-SA_junction = SA_junction(abs(SA_junction.yum) <= 1.5, :);
-E_energy_SA_junction = getEnergySA(SA_junction, Materials(3).SA, Materials(1).SA);
-
-
-%% Adding E^2 and Energy per m
-MA_temp = MA(:,[4,5,6,7,8,9]);
-%Esquared = rowfun(@(ExReVm, EyReVm, EzReVm, ExImVm, EyImVm, EzImVm) sumsqr([ExReVm EyReVm EzReVm ExImVm EyImVm EzImVm]),MA_temp, 'InputVariables', {'ExReVm' 'EyReVm' 'EzReVm' 'ExImVm' 'EyImVm' 'EzImVm'}, 'OutputVariableName', 'Esquared');
-Esquared = getEsquared(MA_temp);
-MA_squared = [MA Esquared];
-E_energy = getEnergy(MA_squared,3,Materials(1).vacuum);
-%E_energy_perm = rowfun(@(Areaum2, Esquared) Materials(1).vacuum*.5*Areaum2*(10^-12)*Esquared,MA_squared, 'InputVariables', {'Areaum2' 'Esquared'}, 'OutputVariableName', 'Energyperm');
-%MA_squared = [MA_squared E_energy_perm];
-%Energy_MA = sum(MA_squared.Energyperm)*3*10^-9;
-
-
-MS_normal_temp = intersect(Data.Pads_normal, Data.Substrate_normal,'rows');
-
-
-
-
-
-%% Adding E^2 and Energy per m
-% MA_temp = MA(:,[4,5,6,7,8,9]);
-% %Esquared = rowfun(@(ExReVm, EyReVm, EzReVm, ExImVm, EyImVm, EzImVm) sumsqr([ExReVm EyReVm EzReVm ExImVm EyImVm EzImVm]),MA_temp, 'InputVariables', {'ExReVm' 'EyReVm' 'EzReVm' 'ExImVm' 'EyImVm' 'EzImVm'}, 'OutputVariableName', 'Esquared');
-% Esquared = getEsquared(MA_temp);
-% MA_squared = [MA Esquared];
-% %E_energy = getEnergy(MA_squared,3,Materials(1).vacuum);
-% E_energy_perm = rowfun(@(Areaum2, Esquared) Materials(1).vacuum*.5*Areaum2*(10^-12)*Esquared,MA_squared, 'InputVariables', {'Areaum2' 'Esquared'}, 'OutputVariableName', 'Energyperm');
-% MA_squared = [MA_squared E_energy_perm];
-% 
-% Energy_MA = sum(MA_squared.Energyperm)*3*10^-9;
+% SA_junction = SA(abs(SA.xum) <= 2,:); % && abs(SA.xum) <= 2 && abs(SA.yum) <= 1.5, :);
+% SA_junction = SA_junction(abs(SA_junction.yum) <= 1.5, :);
+% E_energy_SA_junction = getEnergySA(SA_junction, Materials(3).SA, Materials(1).SA);
 % 
 
-%% Bulk Energy
-Max_3D = 419.6*10^3;
-MaxVal = 100.9*10^3;
-MinVal = 0;
-MeanVal = 28.687799;
-Deviation = 503.47137;
-N_meshcells = 1492920;
+%% remove path
+rmpath(path_to_folder);
 
-Subs_vol = par.substrate_h*par.substrate_l*par.substrate_w*10^(-18);
-E_bulk = MeanVal*Subs_vol;
-
-dx = 30.303*10^(-6);
-dy = 30.303*10^(-6);
-dz = 27.3684*10^(-6);
-dV = dx *dy *dz;
-E_subs = sum(Substrate.WeJm3)*dV;
