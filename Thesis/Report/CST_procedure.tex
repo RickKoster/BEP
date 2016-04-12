@@ -1,5 +1,20 @@
 \chapter{CST procedure}
-This chapter will detail the steps that should be taken to easily set up a qubit simulation in CST. The determination of the capacitance of the qubit and the electric fields in the structure will be treated separately as the second process is more complex. Both simulations make use of the Frequency Domain Solver. Settings applicable to both processes are the frequency range and the boundaries. 
+This chapter will detail the steps that should be taken to easily set up a qubit simulation in CST. First a project template needs to be created.
+\section{Creating a new project}
+ When a new project is started, CST asks which module is going to be used. Most settings can be changed at a later time.
+ \begin{itemize}
+ 	\item After clicking '\textit{Create project}' choose '\textit{MW \& RF \& Optical}'.
+ 	\item Choose '\textit{Antennas}' and click '\textit{Next >}'.
+ 	\item Choose '\textit{Waveguide (Horn, Cone, etc.)}'.
+ 	\item Choose '\textit{Frequency Domain}'.
+ 	\item Select the units to be used, the default settings are sufficient.
+ 	\item Choose a frequency domain. This can be left blank and changed at a later time.
+ 	\item Click '\textit{Next}' to see an overview of the created template.
+ 	\item Click '\textit{Finish}'. 
+ \end{itemize}
+Qubit designs can now be imported or created in CST.\\
+
+The determination of the capacitance of the qubit and the electric fields in the structure will be treated separately as the second process is more complex. Both simulations make use of the Frequency Domain Solver. Settings applicable to both processes are the frequency range and the boundaries. 
 \begin{itemize}
 	\item Under '\textit{Simulation}' click '\textit{Frequency}' and set the desired values.
 	\item Again under '\textit{Simulation}' click '\textit{Boundaries}' and set the fields as in figure \ref{fig:Boundaries}
@@ -15,7 +30,7 @@ This chapter will detail the steps that should be taken to easily set up a qubit
 \end{figure}
 
 \section{The capacitance}
-As show in equation \eqref{eq:totalenergy} the capacitance of the structure must be known to calculate the total energy in the qubit. The value of the capacitance converges very quickly as the mesh is refined. This simulation should always include a Discrete Port connected to the capacitor pads.
+As shown in equation \eqref{eq:totalenergy} the capacitance of the structure must be known to calculate the total energy in the qubit. The value of the capacitance converges very quickly as the mesh is refined. This simulation should always include a Discrete Port connected to the capacitor pads.
 % 
 \subsection{Modeling}
 The qubit design can be imported to CST or created in CST itself. Figure \ref{fig:capacitance_basic_setup} shows a qubit designed in CST. It includes two metal pads connected by a discrete port and is surrounded by a metal ground sheet. 
@@ -83,48 +98,31 @@ Next, to ensure a fine initial mesh, the edges on the side of the pads are round
 
 \begin{itemize}
 	\item In the Navigation Tree, under '\textit{Components}' select all objects pertaining to one pad.
-	\item Under '\textit{Modeling}' click the '\textit{Boolean operator}'.
+	\item Under '\textit{Modeling}' click '\textit{Boolean}'.
 \end{itemize}
 Now that the pad consists of a single object, its side edges can be rounded.
 \begin{itemize}
 	\item Under '\textit{Modeling}' click '\textit{Picks}' and choose '\textit{Pick Edge Chain}' (or use Shift+E)
 	\item Select all the edges laying in the \(xy\)-plane.
 \end{itemize}
-Figure \ref{fig:blending1} show what the selection should look like. Once the right edges are selected they can be rounded;
+Figure \ref{fig:blending} show what the selection should look like. Once the right edges are selected they can be rounded;
 \begin{itemize}
 	\item Under '\textit{Modeling}' click '\textit{Blend}'.
 	\item Set the '\textit{radius}' to be half the height of the pad. 
 \end{itemize}
-The result should be as in figure \ref{fig:blending3}.
+The result should be as in figure \ref{fig:blending}.
 
 
-%\begin{figure}%
-%	\centering
-%	\subfloat[label 1]{{\includegraphics[width=5cm]{Figures/blending1} }}%
-%	\qquad
-%	\subfloat[label 2]{{\includegraphics[width=5cm]{Figures/blending1} }}%
-%	\caption{2 Figures side by side}%
-%	\label{fig:example}%
-%\end{figure}
-%\begin{figure}[h]
-%%	\begin{center}
-%		\begin{subfigure}[b]{0.4\textwidth}
-%		\includegraphics[width = 0.3\textwidth]{Figures/blending1}
-%		\end{subfigure}
-%		\begin{subfigure}[b]{0.4\textwidth}
-%		\includegraphics[width = 0.3\textwidth]{Figures/blending1}
-%		\caption{A selection of two Edge Chains in red. One at the level of the substrate and another at the level of the top of the pad.}
-%		\label{fig:blending1}
-%%	\end{center}
-%\end{figure}
 \begin{figure}[h]
-  	\begin{center}
- 		
- 		\includegraphics[width = 0.3\textwidth]{Figures/blending1}
- 		\caption{A selection of two Edge Chains in red. One at the level of the substrate and another at the level of the top of the pad.}
- 		\label{fig:blending1}
-  	\end{center}
- \end{figure}
+	\centering
+	\subfloat[A selection of two Edge Chains in red. One at the level of the substrate and another at the level of the top of the pad.]{{\includegraphics[width=5cm]{Figures/blending3} }}
+	\qquad
+	\subfloat[The resulting blended edges.]{{\includegraphics[width=5cm]{Figures/blending4} }}
+	\caption{Before and after blending the edges}
+	\label{fig:blending}
+\end{figure}
+
+
 \subsection{Meshing}
 In order to obtain a fine initial mesh the \textit{Global mesh properties} can be changed;
 \begin{itemize}
@@ -135,7 +133,7 @@ In order to obtain a fine initial mesh the \textit{Global mesh properties} can b
 	\item \textbf{Uncheck} the '\textit{Anistropic curvature refinement}'.  
 \end{itemize}
 See figure \ref{fig:MeshProperties} for the settings.
-\begin{figure}
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale = .6]{Figures/MeshProperties}
 		\caption{The required settings for the Mesh Properties. The Anistropic curvature refinement must be unchecked!}
@@ -147,16 +145,18 @@ See figure \ref{fig:MeshProperties} for the settings.
 To be able to view and save field data, include a field monitor;
 \begin{itemize}
 	\item Under '\textit{Simulation}' click '\textit{Field Monitor}'.
-	\item In the pop-up window select the e-field monitor and choose a frequency.
+	\item In the pop-up window select the E-Field monitor and choose a frequency.
 	\item Click '\textit{OK}', the monitor should be visible in the Navigation Tree.
+	\item Include any other field monitors that are needed.
 \end{itemize}
+The simulation is now ready to run.
 
 \subsection{Exporting data}
 To calculate the participation ratio the simulated electric field is exported as an ASCII file. In order to separate data pertaining to different lossy layers the data for the field on the Pads, Substrate and Ground can be exported separately. 
 \begin{itemize}
 	\item In the Navigation Tree under '\textit{Components}' hide all objects until only the Pads are visible.
-	\item Again in the Navigation Tree open the '\textit{2D Results}' folder.
+	\item Again in the Navigation Tree open the '\textit{2D/3D Results}' folder.
 	\item Select the '\textit{Abs}' component of the '\textit{E-Field}'.
-	\item Under '\textit{Post Processing}' click '\textit{Import/Export}' and click '\textit{Export as ASCII file}'. 
+	\item Under '\textit{Post Processing}' click '\textit{Import/Export}' and click '\textit{Plot Data (ASCII)}'. 
 \end{itemize}
 Repeat these steps for the Substrate and Ground.
