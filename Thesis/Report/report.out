@@ -29,11 +29,9 @@
 \BOOKMARK [2][-]{subsection.4.3.2}{Meshing}{section.4.3}% 29
 \BOOKMARK [2][-]{subsection.4.3.3}{Simulation setup}{section.4.3}% 30
 \BOOKMARK [2][-]{subsection.4.3.4}{Exporting data}{section.4.3}% 31
-\BOOKMARK [0][-]{chapter.5}{Matlab procedure}{}% 32
-\BOOKMARK [1][-]{section.5.1}{Importing data}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.2}{Separating data for different layers}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.3}{Calculating energies and participation ratio}{chapter.5}% 35
-\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 36
-\BOOKMARK [1][-]{section.6.1}{The capacitance}{chapter.6}% 37
-\BOOKMARK [1][-]{section.6.2}{The participation ratio}{chapter.6}% 38
-\BOOKMARK [0][-]{appendix*.11}{Bibliography}{}% 39
+\BOOKMARK [1][-]{section.4.4}{Matlab procedure}{chapter.4}% 32
+\BOOKMARK [0][-]{chapter.5}{Matlab procedure}{}% 33
+\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 34
+\BOOKMARK [1][-]{section.6.1}{The capacitance}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.2}{The participation ratio}{chapter.6}% 36
+\BOOKMARK [0][-]{appendix*.11}{Bibliography}{}% 37

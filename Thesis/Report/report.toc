@@ -31,10 +31,8 @@
 \contentsline {subsection}{\numberline {4.3.2}Meshing}{10}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Simulation setup}{11}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Exporting data}{11}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Matlab procedure}{11}{section.4.4}
 \contentsline {chapter}{\numberline {5}Matlab procedure}{13}{chapter.5}
-\contentsline {section}{\numberline {5.1}Importing data}{13}{section.5.1}
-\contentsline {section}{\numberline {5.2}Separating data for different layers}{13}{section.5.2}
-\contentsline {section}{\numberline {5.3}Calculating energies and participation ratio}{13}{section.5.3}
 \contentsline {chapter}{\numberline {6}Results and Discussion}{15}{chapter.6}
 \contentsline {section}{\numberline {6.1}The capacitance}{15}{section.6.1}
 \contentsline {section}{\numberline {6.2}The participation ratio}{15}{section.6.2}

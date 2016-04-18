@@ -68,7 +68,7 @@ To ensure convergence of the capacitance, results from the post processing templ
 	\item Under '\textit{Check after broadband calculation:}' mark the '\textit{OD result Template...}' as active and select the 0D result of the capacitance from the post processing template above. 
 	\item Set the required Treshold and Checks as desired and click '\textit{OK}'.
 \end{itemize}
-This will ensure the simulation keeps refining the simulation until your demands on accuracy are met or until maximum amount of mesh refinement passes is reached. After every mesh refinement pass the results are updated and can be checked. In the Navigation Tree click '\textit{Tables}' \(\rightarrow\) '\textit{0D Results}' \(\rightarrow\) '\textit{C1,1\_0D\_yAtX}'. The first result will be viewable once the first pass of the simulation is completed. When the simulation is finished the capacitance of the structure can extracted from the plot. An example is given in figure \ref{fig:capacitanceplot}.
+This will ensure the simulation keeps refining the mesh until your demands on accuracy are met or until maximum amount of mesh refinement passes is reached. After every mesh refinement pass the results are updated and can be checked. In the Navigation Tree click '\textit{Tables}' \(\rightarrow\) '\textit{0D Results}' \(\rightarrow\) '\textit{C1,1\_0D\_yAtX}'. The first result will be viewable once the first pass of the simulation is completed. When the simulation is finished the capacitance of the structure can extracted from the plot. An example is given in figure \ref{fig:capacitanceplot}.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{Figures/capacitanceplot}
@@ -128,10 +128,13 @@ In order to obtain a fine initial mesh the \textit{Global mesh properties} can b
 \begin{itemize}
 	\item Under '\textit{Simulation}' click '\textit{Global mesh properties}'.
 	\item In the pop-up window click '\textit{Specials}'.
-	\item Under the '\textit{Mesh Control}'-tab set '\textit{Smooth mesh with equilibrate ratio}' to \(1.15\).
+	\item Under the '\textit{Mesh Control}'-tab set '\textit{Smooth mesh with equilibrate ratio}' to around \(1.15\). Use this value to fine tune the number of mesh elements in the initial mesh.
 	\item Set '\textit{Normal tolerance}' to \(1\) degree.
-	\item \textbf{Uncheck} the '\textit{Anistropic curvature refinement}'.  
+	\item \textbf{Uncheck} the '\textit{Anistropic curvature refinement}'. 
+	\item Click '\textit{OK}' and '\textit{Update}' to see the resulting mesh. 
 \end{itemize}
+
+Again, use the '\textit{Smooth mesh with equilibrate ratio}' to tune the amount of mesh elements in the initial mesh.
 See figure \ref{fig:MeshProperties} for the settings.
 \begin{figure}[h]
 	\begin{center}
@@ -159,4 +162,13 @@ To calculate the participation ratio the simulated electric field is exported as
 	\item Select the '\textit{Abs}' component of the '\textit{E-Field}'.
 	\item Under '\textit{Post Processing}' click '\textit{Import/Export}' and click '\textit{Plot Data (ASCII)}'. 
 \end{itemize}
-Repeat these steps for the Substrate and Ground.
+Repeat these steps for the Substrate and Ground. \\
+The last value needed from CST is the voltage over the Lumped element.
+\begin{itemize}
+	\item In the Navigation Tree open '\textit{1D Results}'.
+	\item Open '\textit{Lumped Elements}' and select '\textit{Voltages}'.
+	\item Select the element representing the Josephson Junction and extract the voltage at the resonance frequency from the graph.   
+\end{itemize}
+
+\section{Matlab procedure}
+A Matlab script is used to calculate the participation ratio of the lossy layers using the previously exported files from CST. The script will ask for the location of the files containing the data. To calculate the total energy in the system the script will ask for the capacitance of the structure and the voltage over the inductor. After the correct values are submitted, the script will calculate and save the participation ratio of the lossy layers. 
