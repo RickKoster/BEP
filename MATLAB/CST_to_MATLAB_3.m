@@ -1,32 +1,24 @@
-%%IBM_hexa 5.6 GHz
-
-%%Import from .csv file
-%note: integral of electric energy on pad face (MA) by CST:
-%3.128545333e-008 multiply by layer thickness > 
-%3.128545333e-008 * 3*10^(-9) = 9.3856e-17
-
-
-
 %%
 %path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\MATLAB';
+display('Select the folder containing the data files')
 path_to_folder = uigetdir;
 path(path, path_to_folder);
 
 filenames = {};
 
-filenames.data_pads = 'data_pads.txt';
-filenames.data_substrate = 'data_substrate.txt';
-filenames.data_ground = 'data_ground.txt';
+% filenames.data_pads = 'data_pads.txt';
+% filenames.data_substrate = 'data_substrate.txt';
+% filenames.data_ground = 'data_ground.txt';
 
-% disp('Select file containing field data on the pads')
-% [a b] = uigetfile('\..\*.txt');
-% filenames.data_pads = [b a];
-% disp('Select file containing field data on the substrate')
-% [a b] = uigetfile('\..\*.txt');
-% filenames.data_substrate = [b a];
-% disp('Select file containing field data on the ground')
-% [a b] = uigetfile('\..\*.txt');
-% filenames.data_ground = [b a];
+disp('Select file containing field data on the pads')
+[a b] = uigetfile('\..\*.txt');
+filenames.data_pads = [b a];
+disp('Select file containing field data on the substrate')
+[a b] = uigetfile('\..\*.txt');
+filenames.data_substrate = [b a];
+disp('Select file containing field data on the ground')
+[a b] = uigetfile('\..\*.txt');
+filenames.data_ground = [b a];
 
 
 
@@ -37,20 +29,13 @@ Data.Ground = myimportdata(filenames.data_ground);
 Data.Pads = myimportdata(filenames.data_pads);
 Data.Substrate = myimportdata(filenames.data_substrate);
 
-% nrOfPar = 21; %check number of parameters used in CST
-% par = importmodelparameters(filenames.par, nrOfPar);
-
-
-
 %% Separating different interfaces
 MA_ground = Data.Ground;
 
-%MS2 = intersect(data_pads,data_substrate,'rows');
+MS = Data.Pads(Data.Pads.zum == 0, :); %Selects only the values belonging the xy-plane at z=0 (top of the substrate).
+MA = Data.Pads(Data.Pads.zum ~= 0, :); %Selects onlt the values not belonging to the xy-plane at z=0.
 
-MS = Data.Pads(Data.Pads.zum == 0, :);
-MA = Data.Pads(Data.Pads.zum ~= 0, :);
-
-SA_temp = setdiff(Data.Substrate,Data.Pads);
+SA_temp = setdiff(Data.Substrate,Data.Pads); %Data.Substrate contains values at substrate-air intefaces, metal-substrate interfaces and values at the boundary of the simulation. These are separated here.
 SA_temp = setdiff(SA_temp,Data.Ground);
 SA = SA_temp(SA_temp.zum == 0,:);
 clear SA_temp;
@@ -83,7 +68,7 @@ Materials(3).SA = 3*10^-9;
 
 %% Work-around
 MA = [MA getEsquared(MA)];
-E_energy_MA = getEnergy(MA,3,Materials(1).vacuum);
+E_energy_MA = getEnergy(MA,Materials(3).MA,Materials(1).vacuum);
 
 MS = [MS getEsquaredComp(MS, [0 0 1], 'EsquaredNormal')];
 MS = [MS getEsquaredComp(MS, [1 1 0], 'EsquaredTangential')];
