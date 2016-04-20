@@ -14,7 +14,7 @@ This chapter will detail the steps that should be taken to easily set up a qubit
  \end{itemize}
 Qubit designs can now be imported or created in CST.\\
 
-The determination of the capacitance of the qubit and the electric fields in the structure will be treated separately as the second process is more complex. Both simulations make use of the Frequency Domain Solver. Settings applicable to both processes are the frequency range and the boundaries. 
+The estimation of the capacitance of the qubit and the electric fields in the structure will be treated separately as the second process is more complex. Both simulations make use of the Frequency Domain Solver. Settings applicable to both processes are the frequency range and the boundaries. 
 \begin{itemize}
 	\item Under '\textit{Simulation}' click '\textit{Frequency}' and set the desired values.
 	\item Again under '\textit{Simulation}' click '\textit{Boundaries}' and set the fields as in figure \ref{fig:Boundaries}
@@ -31,9 +31,20 @@ The determination of the capacitance of the qubit and the electric fields in the
 
 \section{The capacitance}
 As shown in equation \eqref{eq:totalenergy} the capacitance of the structure must be known to calculate the total energy in the qubit. The value of the capacitance converges very quickly as the mesh is refined. This simulation should always include a Discrete Port connected to the capacitor pads.
+\begin{equation} \label{eq:totalenergy}
+W=\frac{1}{2}CV^{2}
+\end{equation}
+Where \(C\) is the total capacitance of the system and \(V\) the voltage over the systems.
+
 % 
 \subsection{Modeling}
-The qubit design can be imported to CST or created in CST itself. Figure \ref{fig:capacitance_basic_setup} shows a qubit designed in CST. It includes two metal pads connected by a discrete port and is surrounded by a metal ground sheet. 
+The qubit design can be imported to CST or created in CST itself. Figure \ref{fig:capacitance_basic_setup} shows a qubit designed in CST. It includes two perfectly electrical conducting (PEC) pads connected by a discrete port. The pads must be modelled using their actual thickness in order to include the lossy layers on their sides. A discrete port can be added as follows:
+\begin{itemize}
+	\item Under '\textit{Simulation}' click '\textit{Discrete Port}'.
+	\item Now select the location in the model or input the coordinates numerically. Ensure that the discrete port connects the two PEC pads. 
+	\item Leave all other settings as default.  
+\end{itemize}
+The pads are surrounded by a PEC ground sheet.
 \begin{figure}
 	\includegraphics[width=\textwidth]{Figures/capacitance_basic_setup}
 	\caption{An example of a qubit design with the substrate in green, the metal parts in grey and the port indicated by the red cone. No lumped element representing the Josephson junction is present in the model.}
@@ -84,7 +95,7 @@ Using equation \eqref{eq:impedance} the inductance needed to reach a certain res
 \begin{equation}\label{eq:impedance}
 L = \frac{1}{(2\pi)^{2}f_{0}^{2}C}
 \end{equation}
-Where \(f_{0}\) is the required frequency and \(C\) is the capacitance.\\
+Where \(f_{0}\) is the required qubit frequency and \(C\) its capacitance.\\
 Now to include such an inductor;
 \begin{itemize}
 	\item In the simulation menu add a '\textit{Lumped element}'.
@@ -150,12 +161,11 @@ To be able to view and save field data, include a field monitor;
 	\item Under '\textit{Simulation}' click '\textit{Field Monitor}'.
 	\item In the pop-up window select the E-Field monitor and choose a frequency.
 	\item Click '\textit{OK}', the monitor should be visible in the Navigation Tree.
-	\item Include any other field monitors that are needed.
 \end{itemize}
 The simulation is now ready to run.
 
 \subsection{Exporting data}
-To calculate the participation ratio the simulated electric field is exported as an ASCII file. In order to separate data pertaining to different lossy layers the data for the field on the Pads, Substrate and Ground can be exported separately. 
+To calculate the participation ratio the simulated electric field is exported as an ASCII file. In order to separate data pertaining to different lossy layers the data for the field on the Pads, Substrate and Ground must be exported separately. 
 \begin{itemize}
 	\item In the Navigation Tree under '\textit{Components}' hide all objects until only the Pads are visible.
 	\item Again in the Navigation Tree open the '\textit{2D/3D Results}' folder.
@@ -167,8 +177,8 @@ The last value needed from CST is the voltage over the Lumped element.
 \begin{itemize}
 	\item In the Navigation Tree open '\textit{1D Results}'.
 	\item Open '\textit{Lumped Elements}' and select '\textit{Voltages}'.
-	\item Select the element representing the Josephson Junction and extract the voltage at the resonance frequency from the graph.   
+	\item Select the element representing the Josephson Junction and extract the peak voltage at the resonance frequency from the graph.   
 \end{itemize}
 
 \section{Matlab procedure}
-A Matlab script is used to calculate the participation ratio of the lossy layers using the previously exported files from CST. The script will ask for the location of the files containing the data. To calculate the total energy in the system the script will ask for the capacitance of the structure and the voltage over the inductor. After the correct values are submitted, the script will calculate and save the participation ratio of the lossy layers. 
+A Matlab script is used to calculate the participation ratio of the lossy layers using the previously exported files from CST. Run the Matlab script called '\textit{CST\_to\_MATLAB}'. The script will ask for the location of the files containing the data. To calculate the total energy in the system the script will ask for the capacitance of the structure and the voltage over the inductor. After the correct values are entered, the script will calculate and save the participation ratio of the lossy layers. 
