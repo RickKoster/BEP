@@ -27,11 +27,11 @@
 \contentsline {subsection}{\numberline {4.2.3}Post processing}{8}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Simulation setup}{9}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}The electric field}{9}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Modeling}{9}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Meshing}{10}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}Modeling}{10}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Meshing}{11}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Simulation setup}{11}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Exporting data}{11}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Matlab procedure}{11}{section.4.4}
+\contentsline {section}{\numberline {4.4}Matlab procedure}{12}{section.4.4}
 \contentsline {chapter}{\numberline {5}Matlab procedure}{13}{chapter.5}
 \contentsline {chapter}{\numberline {6}Results and Discussion}{15}{chapter.6}
 \contentsline {section}{\numberline {6.1}The capacitance}{15}{section.6.1}

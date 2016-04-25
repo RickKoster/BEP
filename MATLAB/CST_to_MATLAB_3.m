@@ -1,3 +1,6 @@
+clear all
+close all
+
 %%
 %path_to_folder = 'C:\Users\rick\Documents\School\15-16\BEP\BEP\MATLAB';
 display('Select the folder containing the data files')
@@ -6,19 +9,19 @@ path(path, path_to_folder);
 
 filenames = {};
 
-% filenames.data_pads = 'data_pads.txt';
-% filenames.data_substrate = 'data_substrate.txt';
-% filenames.data_ground = 'data_ground.txt';
+filenames.data_pads = 'data_pads.txt';
+filenames.data_substrate = 'data_substrate.txt';
+filenames.data_ground = 'data_ground.txt';
 
-disp('Select file containing field data on the pads')
-[a b] = uigetfile('\..\*.txt');
-filenames.data_pads = [b a];
-disp('Select file containing field data on the substrate')
-[a b] = uigetfile('\..\*.txt');
-filenames.data_substrate = [b a];
-disp('Select file containing field data on the ground')
-[a b] = uigetfile('\..\*.txt');
-filenames.data_ground = [b a];
+% disp('Select file containing field data on the pads')
+% [a b] = uigetfile('\..\*.txt');
+% filenames.data_pads = [b a];
+% disp('Select file containing field data on the substrate')
+% [a b] = uigetfile('\..\*.txt');
+% filenames.data_substrate = [b a];
+% disp('Select file containing field data on the ground')
+% [a b] = uigetfile('\..\*.txt');
+% filenames.data_ground = [b a];
 
 
 
@@ -92,7 +95,7 @@ p.SA = E_energy_SA/E_tot;
 
 p
 
-save([path_to_folder '\ratio'], 'p', 'E_energy_MA', 'E_energy_MS', 'E_energy_SA', 'E_tot');
+save([path_to_folder '\ratio'], 'p', 'E_energy_MA', 'E_energy_MS', 'E_energy_SA', 'E_tot', 'C','V' );
 
 %% Exclude junction region
 % SA_junction = SA(abs(SA.xum) <= 2,:); % && abs(SA.xum) <= 2 && abs(SA.yum) <= 1.5, :);
