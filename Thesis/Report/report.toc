@@ -36,5 +36,5 @@
 \contentsline {chapter}{\numberline {6}Results and Discussion}{15}{chapter.6}
 \contentsline {section}{\numberline {6.1}The capacitance}{15}{section.6.1}
 \contentsline {section}{\numberline {6.2}The participation ratio}{15}{section.6.2}
-\contentsline {chapter}{Bibliography}{17}{appendix*.11}
+\contentsline {chapter}{Bibliography}{17}{appendix*.12}
 \contentsfinish 

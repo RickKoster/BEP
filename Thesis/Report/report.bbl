@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -28,6 +28,16 @@ J.~Koch, T.~M. Yu, J.~Gambetta, A.~A. Houck, D.~I. Schuster, J.~Majer,
 \newblock Charge insensitive qubit design derived from the cooper pair box.
 \newblock \emph{Physical Review, A}, 76, February 2007.
 \newblock \doi{10.1103/PhysRevA.76.042319}.
+
+\bibitem[Martinis et~al.(2005)Martinis, Cooper, McDermott, Steffen, Ansmann,
+  Osborn, Cicak, Oh, Pappas, Simmonds, and Yu]{PhysRevLett.95.210503}
+John~M. Martinis, K.~B. Cooper, R.~McDermott, Matthias Steffen, Markus Ansmann,
+  K.~D. Osborn, K.~Cicak, Seongshik Oh, D.~P. Pappas, R.~W. Simmonds, and
+  Clare~C. Yu.
+\newblock Decoherence in josephson qubits from dielectric loss.
+\newblock \emph{Phys. Rev. Lett.}, 95:\penalty0 210503, Nov 2005.
+\newblock \doi{10.1103/PhysRevLett.95.210503}.
+\newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.95.210503}.
 
 \bibitem[Wang et~al.(2015)Wang, Axline, Gao, Brecht, Frunzio, Devoret, and
   Schoelkopf]{Wang2015}
