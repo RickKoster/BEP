@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{todonotes}
+\usepackage[titletoc]{appendix}
 
 \begin{document}
 
@@ -67,8 +68,6 @@
 \input{Introduction}
 \input{Theory}
 \input{Model_of_the_system}
-\input{CST_procedure}
-\input{Matlab_procedure}
 \input{Results_and_Discussion}
 
 %% Use letters for the chapter numbers of the appendices.
@@ -77,6 +76,10 @@
 %\input{appendix-a}
 
 \bibliography{report}
-
+\begin{appendices}
+		\input{CST_procedure}
+		\input{Matlab_procedure}
+	
+\end{appendices}
 \end{document}
 
