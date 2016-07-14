@@ -75,7 +75,7 @@ Using the previous results several interdigitated qubits were designed to have a
 
 
 
-By default the corners of the fingers were rounded (as in figure \ref{fig:}). As this was not standard practice the influence of doing so was determined retroactively. To do so the corner radius of the fingers (with a width of 20 \(\mu\)m) was changed between 1 and 10 \(\mu\)m (10 \(\mu\)m making semi-circles at the finger tips). The resulting participation ratios can be seen in table \ref{table:ratio_cornerradius} and figure \ref{fig:}. All participation ratios tend to decrease as the corner radius is increased. 
+By default the corners of the fingers were rounded (as in figure \ref{fig:Yale_parameters2}). As this was not standard practice the influence of doing so was determined retroactively. To do so the corner radius of the fingers (with a width of 20 \(\mu\)m) was changed between 1 and 10 \(\mu\)m (10 \(\mu\)m making semi-circles at the finger tips). The resulting participation ratios can be seen in table \ref{table:ratio_cornerradius} and figure \ref{fig:}. All participation ratios tend to decrease as the corner radius is increased. 
 
 \begin{table}
 	\begin{center}
@@ -118,7 +118,22 @@ Looking at these results for the interdigitated qubit design it can be seen that
 % \textit{Alternatively:}Extrapolating these changes would indicate that making the fingers ever shorter but wider would result in a qubit with even smaller participation ratios. The resulting qubit consists of two rectangular pads separated by the junction. 
 
 \section{Parallel pad qubit}
-Due to the simplicity of the parallel pad design (see figure \ref{fig:}) there are fewer ways of changing the qubit. The parameters under consideration are the pad separation, the pad width, and the radius of the corners. Again, first the influence different parameters have on the capacitance of the system was determined. Afterwards the participation ratios of different configurations were calculated.
+The resulting qubit design can be seen in figure \ref{fig:IBM_parameters23}. Due to its simplicity there are fewer ways of changing the qubit. The parameters under consideration are the pad separation, the pad width, and the radius of the corners. Again, first the influence different parameters have on the capacitance of the system was determined. Afterwards the participation ratios of different configurations were calculated.
+
+
+\begin{figure}[h]
+	\centering
+	\begin{tabular}{c}
+		\subfloat[Overview of the parallel pad qubit]{{\includegraphics[width = \textwidth]{Figures/IBM_parameters3} }} \\
+		
+		\subfloat[Zoomed in view of the center of the qubit.]{{\includegraphics[width = \textwidth]{Figures/IBM_parameters2} }}
+	\end{tabular}
+	\caption{The parallel pad qubit design including parameters and dimensions valid for all iterations of the design. (a) W is the width of the pads, L is the length of the pad, the size of the grounded slot here is 650 \(\mu\)m. (b) 1 is the pad separation distance. 2 is the junction separation distance which is .5 \(mu\)m for all qubits. 3 is the length of the junction lead which depends only on the separation distance of the qubit.}
+	\label{fig:IBM_parameters23}
+\end{figure}
+
+
+
 \subsection{The capacitance}
 Similar to adding extra fingers to the interdigitated qubit, widening the pad width is expected to linearly increase the capacitance of the system. The pad width was changed between 300 and 500 \(\mu\)m. The data shown in figure \ref{fig:} indeed shows a linear proportionality.
 The capacitance of a standard parallel plate capacitor is inversely proportional to the plate separation. Similar proportionality is expected for the parallel pad qubit system. The pad separation was set between 5 and 60 \(\mu\)m. The resulting capacitances can be seen in figure \ref{fig:}.
@@ -139,7 +154,7 @@ To explain these results the actual electric field can be looked at. Figure \ref
  
 Next, figure \ref{fig:} shows a comparison of the electric field intensity belonging to parallel pad qubits with a separation distance of 5 and 60 \(\mu\)m, a cross-section is also included. \todo{Explain differences in field intensity}.
  
-Finally, figure \ref{fig:} shows a comparison of the electric field intensity belonging to bot interdigitated and parallel pad qubit having partial of fully rounded corners. The difference is especially noticeable for the interdigitated qubits. \todo{Explain differences in field intensity}.
+Finally, figure \ref{fig:} shows a comparison of the electric field intensity belonging to both interdigitated and parallel pad qubit having partial of fully rounded corners. The difference is especially noticeable for the interdigitated qubits. \todo{Explain differences in field intensity}.
   
 
 

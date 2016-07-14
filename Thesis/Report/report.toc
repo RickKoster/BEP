@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {4.2.1}The capacitance}{13}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}The participation ratios}{13}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Conclusion}{13}{section.4.3}
-\contentsline {chapter}{Bibliography}{15}{appendix*.25}
+\contentsline {chapter}{Bibliography}{15}{appendix*.26}
 \contentsline {chapter}{Appendix \numberline {A}CST procedure}{17}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Creating a new project}{17}{section.1.A.1}
 \contentsline {section}{\numberline {A.2}The capacitance}{17}{section.1.A.2}
