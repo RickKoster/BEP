@@ -15,34 +15,34 @@
 \contentsline {subsubsection}{Two-Level Systems}{4}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}The participation ratio}{4}{section.2.5}
 \contentsline {chapter}{\numberline {3}Model of the system}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Materials and dimensions}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}Josephson junction}{5}{section.3.2}
+\contentsline {section}{\numberline {3.1}The qubit as an LC-circuit}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Materials and dimensions}{5}{section.3.2}
 \contentsline {section}{\numberline {3.3}Lossy layers}{5}{section.3.3}
-\contentsline {section}{\numberline {3.4}Meshing}{5}{section.3.4}
+\contentsline {section}{\numberline {3.4}Meshing}{6}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Ground}{6}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Pads}{6}{subsection.3.4.2}
-\contentsline {chapter}{\numberline {4}Results and Discussion}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Interdigitated qubit}{7}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}The capacitance}{7}{subsection.4.1.1}
-\contentsline {subsubsection}{Ground plane separation}{7}{section*.11}
-\contentsline {subsubsection}{The fingers}{7}{section*.12}
-\contentsline {subsection}{\numberline {4.1.2}The participation ratios}{7}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Parallel pad qubit}{9}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}The capacitance}{9}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}The participation ratios}{10}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Conclusion}{10}{section.4.3}
-\contentsline {chapter}{Bibliography}{11}{appendix*.21}
-\contentsline {chapter}{Appendix \numberline {A}CST procedure}{13}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Creating a new project}{13}{section.1.A.1}
-\contentsline {section}{\numberline {A.2}The capacitance}{13}{section.1.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Modeling}{14}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Meshing}{14}{subsection.1.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Post processing}{14}{subsection.1.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Simulation setup}{15}{subsection.1.A.2.4}
-\contentsline {section}{\numberline {A.3}The electric field}{15}{section.1.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Modeling}{16}{subsection.1.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Meshing}{17}{subsection.1.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Simulation setup}{17}{subsection.1.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}Exporting data}{17}{subsection.1.A.3.4}
-\contentsline {chapter}{Appendix \numberline {B}Matlab procedure}{19}{Appendix.1.B}
+\contentsline {chapter}{\numberline {4}Results and Discussion}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Interdigitated qubit}{9}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The capacitance}{9}{subsection.4.1.1}
+\contentsline {subsubsection}{Ground plane separation}{9}{section*.15}
+\contentsline {subsubsection}{The fingers}{9}{section*.16}
+\contentsline {subsection}{\numberline {4.1.2}The participation ratios}{12}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Parallel pad qubit}{12}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}The capacitance}{13}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}The participation ratios}{13}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Conclusion}{13}{section.4.3}
+\contentsline {chapter}{Bibliography}{15}{appendix*.25}
+\contentsline {chapter}{Appendix \numberline {A}CST procedure}{17}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Creating a new project}{17}{section.1.A.1}
+\contentsline {section}{\numberline {A.2}The capacitance}{17}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Modeling}{18}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Meshing}{18}{subsection.1.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Post processing}{18}{subsection.1.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Simulation setup}{19}{subsection.1.A.2.4}
+\contentsline {section}{\numberline {A.3}The electric field}{19}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Modeling}{20}{subsection.1.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Meshing}{21}{subsection.1.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Simulation setup}{21}{subsection.1.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}Exporting data}{21}{subsection.1.A.3.4}
+\contentsline {chapter}{Appendix \numberline {B}Matlab procedure}{23}{Appendix.1.B}
 \contentsfinish 

@@ -1,5 +1,5 @@
 \chapter{Results and Discussion}
-The starting point of this project was the familiar interdigitated qubit (see figure \ref{fig:}). This chapter will start with a discussion of the results gathered on this design.
+The starting point of this project was the familiar interdigitated qubit \todo{Reference}(see figure \ref{fig:Yale_parameters2}). This chapter will start with a discussion of the results gathered on this design.
 
 %%The main focus during this project rested on two distinct qubit designs, namely the interdigitated and the parallel pad qubits. The two designs can be compared in figure \ref{fig:}.
 
@@ -15,6 +15,16 @@ Taking these insights into account a second qubit design was investigated in sim
 
 
 \section{Interdigitated qubit}
+As the name suggests the interdigitated qubit consists of two pads having a certain amount of fingers. The pads are positioned such that the fingers are at an equal distance from each other. The distance between the inductor and the first finger was set to 40 \(\mu\)m for all interdigitated qubit designs. An overview of the design with its parameters is depicted in figure \ref{fig:Yale_parameters2}
+
+\begin{figure}
+	\centering
+	\includegraphics[width = \textwidth]{Figures/Yale_parameters2}
+	\caption{The interdigitated qubit design including parameters and dimensions valid for all iterations of the design. Dimensions are in micrometers.}
+	\label{fig:Yale_parameters2}
+\end{figure}
+
+
 \subsection{The capacitance} \todo{rethink subsection structure?}
 \subsubsection{Ground plane separation}
 To better determine the influence of the pad design on the capacitance of the system, the influence of the ground plane is determined as a function of separation distance. Figure \ref{fig:capacitance_vs_slotsize} indicates that the influence of the ground plane on the capacitance of the system decreases rapidly with increasing separation distance. The influence of the ground plane becomes insignificant only at a separation distance of around 100 \(\mu\)m. So, in order to determine the influence of changes in pad design on the capacitance (and participation ratio) of the system, the separation distance of the ground plane should be carefully kept equal among pad designs. \todo{Or I should have eliminated the ground plane altogether when determining the influence of certain parameters.} 
