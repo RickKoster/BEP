@@ -1,5 +1,6 @@
 \chapter{CST procedure}
-This chapter will detail the steps that should be taken to easily set up a qubit simulation in CST. First a project template needs to be created.
+\label{appendix:CST_procedure}
+This appendix will detail the steps that should be taken to easily set up a qubit simulation in CST. First a project template needs to be created.
 \section{Creating a new project}
  When a new project is started, CST asks which module is going to be used. Most settings can be changed at a later time.
  \begin{itemize}
@@ -180,5 +181,5 @@ The last value needed from CST is the voltage over the Lumped element.
 	\item Select the element representing the Josephson Junction and extract the peak voltage at the resonance frequency from the graph.   
 \end{itemize}
 
-\section{Matlab procedure}
-A Matlab script is used to calculate the participation ratio of the lossy layers using the previously exported files from CST. Run the Matlab script called '\textit{CST\_to\_MATLAB}'. The script will ask for the location of the files containing the data. To calculate the total energy in the system the script will ask for the capacitance of the structure and the voltage over the inductor. After the correct values are entered, the script will calculate and save the participation ratio of the lossy layers. 
+%\section{Matlab procedure}
+%A Matlab script is used to calculate the participation ratio of the lossy layers using the previously exported files from CST. Run the Matlab script called '\textit{CST\_to\_MATLAB}'. The script will ask for the location of the files containing the data. To calculate the total energy in the system the script will ask for the capacitance of the structure and the voltage over the inductor. After the correct values are entered, the script will calculate and save the participation ratio of the lossy layers. 

@@ -15,18 +15,23 @@
 \contentsline {subsubsection}{Two-Level Systems}{4}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}The participation ratio}{4}{section.2.5}
 \contentsline {chapter}{\numberline {3}Model of the system}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Josephson junction}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}Lossy layers}{5}{section.3.2}
-\contentsline {section}{\numberline {3.3}Ground}{5}{section.3.3}
-\contentsline {section}{\numberline {3.4}title}{5}{section.3.4}
+\contentsline {section}{\numberline {3.1}Materials and dimensions}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Josephson junction}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Lossy layers}{5}{section.3.3}
+\contentsline {section}{\numberline {3.4}Meshing}{5}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Ground}{6}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Pads}{6}{subsection.3.4.2}
 \contentsline {chapter}{\numberline {4}Results and Discussion}{7}{chapter.4}
 \contentsline {section}{\numberline {4.1}Interdigitated qubit}{7}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}The capacitance}{7}{subsection.4.1.1}
-\contentsline {subsubsection}{Ground plane separation}{7}{section*.6}
-\contentsline {subsubsection}{The fingers}{7}{section*.7}
-\contentsline {section}{\numberline {4.2}The participation ratio}{7}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Parallel pad qubit}{9}{subsection.4.2.1}
-\contentsline {chapter}{Bibliography}{11}{appendix*.13}
+\contentsline {subsubsection}{Ground plane separation}{7}{section*.11}
+\contentsline {subsubsection}{The fingers}{7}{section*.12}
+\contentsline {subsection}{\numberline {4.1.2}The participation ratios}{7}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Parallel pad qubit}{9}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}The capacitance}{9}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}The participation ratios}{10}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Conclusion}{10}{section.4.3}
+\contentsline {chapter}{Bibliography}{11}{appendix*.21}
 \contentsline {chapter}{Appendix \numberline {A}CST procedure}{13}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Creating a new project}{13}{section.1.A.1}
 \contentsline {section}{\numberline {A.2}The capacitance}{13}{section.1.A.2}
@@ -39,6 +44,5 @@
 \contentsline {subsection}{\numberline {A.3.2}Meshing}{17}{subsection.1.A.3.2}
 \contentsline {subsection}{\numberline {A.3.3}Simulation setup}{17}{subsection.1.A.3.3}
 \contentsline {subsection}{\numberline {A.3.4}Exporting data}{17}{subsection.1.A.3.4}
-\contentsline {section}{\numberline {A.4}Matlab procedure}{18}{section.1.A.4}
 \contentsline {chapter}{Appendix \numberline {B}Matlab procedure}{19}{Appendix.1.B}
 \contentsfinish 
