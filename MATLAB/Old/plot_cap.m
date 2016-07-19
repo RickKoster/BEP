@@ -61,3 +61,37 @@ yPos = 60e-15;
 hold on
 plot(get(gca,'xlim'), [yPos yPos], '--'); % Adapts to x limits of current axes
 hold off
+
+%% Cap VS Width
+i = find(Cap.five.L == 50);
+j = find(Cap.ten.L == 50);
+k = find(Cap.twenty.L == 50);
+l = find(Cap.fifty.L == 50);
+
+Capacitances = [Cap.five.C(i) Cap.ten.C(j) Cap.twenty.C(k) Cap.fifty.C(l)]; 
+figure
+plot([5 10 20 50], Capacitances,'bs-', 'MarkerFaceColor', 'b', 'LineWidth', 2, 'MarkerSize', 8) 
+
+xlabel('Finger Width [\mum]');
+ylabel('Capacitance [F]');
+title('L = 50 [\mum]');
+
+%% Cap VS Separation
+figure
+x = [5:5:60];
+plot(x, CapS5_60,'bs', 'MarkerFaceColor', 'b', 'LineWidth', 2, 'MarkerSize', 8)
+xlabel('Pad Separation Distance [\mum]');
+ylabel('Capacitance [F]');
+
+y = CapS5_60'; 
+
+% Parameter Vector: b(1) = a,  b(2) = b,  b(3) = c
+yfit = @(b,x) b(1)./(x + b(2)) + b(3);  % Objective Function
+
+CF = @(b) sum((y-yfit(b,x)).^2);        % Cost Function
+
+b0 = [5e-12,0,3.5e-14];                      % Initial Parameter Estimates
+[B, fv] = fminsearch(CF, b0);           % Estimate Parameters
+
+hold on
+plot(x,  B(1)./(x + B(2)) + B(3));
