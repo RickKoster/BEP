@@ -1,60 +1,81 @@
 \chapter{Results and Discussion}
-The starting point of this project was the familiar interdigitated qubit \todo{Reference}(see figure \ref{fig:Yale_parameters2}). This chapter will start with a discussion of the results gathered on this design.
-
+The starting point of this project was the familiar interdigitated qubit (see figure \ref{fig:Yale_parameters2}). This chapter will start with a discussion of the results gathered on this design.
+%\cite{Houck2007}
 %%The main focus during this project rested on two distinct qubit designs, namely the interdigitated and the parallel pad qubits. The two designs can be compared in figure \ref{fig:}.
 
 
-First, the influence of different parameters on the capacitance of structures was determined. This knowledge enables designing structures with a specific capacitance necessary for a qubit with a certain frequency (see equation \eqref{eq:}).
+First, the influence of different parameters on the capacitance of structures was determined. This knowledge enables designing structures with a specific capacitance necessary for a qubit with a certain frequency (see equation \eqref{eq:}). The target capacitance is 60 \(f\)F. With an inductor having an inductance of 10 \(n\)H this result in a resonance frequency of around 6.5 \(G\)Hz.
 
 
 Secondly, the participation ratio of the lossy layers is determined. This will give insight into what design decisions can be made to reduce these participation ratios.\\
-Taking these insights into account a second qubit design was investigated in similar fashion. 
+Taking these insights into account, a second qubit design was investigated in similar fashion. 
 
+\vfill
 
-
-
-
-\section{Interdigitated qubit}
-As the name suggests the interdigitated qubit consists of two pads having a certain amount of fingers. The pads are positioned such that the fingers are at an equal distance from each other. The distance between the inductor and the first finger was set to 40 \(\mu\)m for all interdigitated qubit designs. An overview of the design with its parameters is depicted in figure \ref{fig:Yale_parameters2}
-
-\begin{figure}
+\begin{figure}[h]
 	\centering
-	\includegraphics[width = \textwidth]{Figures/Yale_parameters2}
+	\includegraphics[scale = .4]{Figures/Yale_parameters2_cropped}
 	\caption{The interdigitated qubit design including parameters and dimensions valid for all iterations of the design. Dimensions are in micrometers.}
 	\label{fig:Yale_parameters2}
 \end{figure}
 
+\clearpage
+\section{Interdigitated qubit}
+As the name suggests the interdigitated qubit consists of two pads having a certain amount of fingers. The pads are positioned such that the fingers are at an equal distance from each other. The distance between the inductor and the first finger was set to 40 \(\mu\)m for all interdigitated qubit designs. An overview of the design with its parameters is depicted in figure \ref{fig:Yale_parameters2}
 
-\subsection{The capacitance} \todo{rethink subsection structure?}
-\subsubsection{Ground plane separation}
+
+
+
+\subsection{The capacitance}
 To better determine the influence of the pad design on the capacitance of the system, the influence of the ground plane is determined as a function of separation distance. Figure \ref{fig:capacitance_vs_slotsize} indicates that the influence of the ground plane on the capacitance of the system decreases rapidly with increasing separation distance. The influence of the ground plane becomes insignificant only at a separation distance of around 100 \(\mu\)m. So, in order to determine the influence of changes in pad design on the capacitance (and participation ratio) of the system, the separation distance of the ground plane should be carefully kept equal among pad designs. \todo{Or I should have eliminated the ground plane altogether when determining the influence of certain parameters.} 
-
-\subsubsection{The fingers}
-For the interdigitated pad design, the first parameter under investigation is the amount of 'fingers' in the  qubit. The capacitances of qubits with 4 to 9 fingers were determined. The finger length, width and separation were not changed.
-As can be seen in figure \ref{fig:}, the relationship appears to be linear. This can be explained by viewing the addition of a finger as the addition of an extra capacitor in parallel.\\
-Next the influence of the finger width is determined. The finger separation is kept equal to the finger width. For a design with five fingers the results are depicted in figure \ref{fig:} \\
-
-Having determined the dependencies, qubits can be designed to have specific capacitances. Keeping all other parameters equal, the capacitance of earlier systems was tuned by adjusting the length of the fingers. For qubits with 5 fingers and a finger width of 5 to 50 \(\mu\)m the finger length was adjusted between 10 and 100 \(\mu\)m. \\
-The results are combined in figure \ref{fig:Capacitances_g5_50}.
-
- 
 
 \begin{figure}
 	\centering
-	\includegraphics[width = \textwidth]{Figures/capacitance_vs_slotsize}
+	\includegraphics[width = \textwidth]{Figures/capacitance_vs_slotsize_edit}
 	\caption{Capacitance of the system as a function of ground plane separation}
 	\label{fig:capacitance_vs_slotsize}
 \end{figure}
 
+For the interdigitated pad design specifically, the first parameter under investigation is the amount of 'fingers' in the  qubit. The capacitances of qubits with 4 to 9 fingers were determined. The finger length, width and separation were not changed.
+As can be seen in figure \ref{fig:CapVSFingers}, the relationship appears to be linear. This can be explained by viewing the addition of a finger as the addition of an extra capacitor in parallel.\\
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 0.7]{Figures/Capacitance_Plots/CapVSFingers.png}
+	\caption{Capacitance as a function of the amount of fingers in the interdigitated qubit design. Finger width and length are equal in all qubits.}
+	\label{fig:CapVSFingers}
+\end{figure}
+
+Next the influence of the finger width is determined. The finger separation is kept equal to the finger width. For a design with five fingers the results are depicted in figure \ref{fig:CapVSWidthL10}. \\
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 0.7]{Figures/Capacitance_Plots/CapVSWidthL10.png}
+	\caption{Capacitance as a function of finger width in the interdigitated qubit design. All qubit have five fingers and equal finger length.}
+	\label{fig:CapVSWidthL10}
+\end{figure}
+
+Having determined the dependencies, qubits can be designed to have specific capacitances. Keeping all other parameters equal, the capacitance of earlier systems was tuned by adjusting the length of the fingers. For qubits with 5 fingers and a finger width of 5 to 50 \(\mu\)m the finger length was adjusted between 10 and 100 \(\mu\)m. \\
+The results are combined in figure \ref{fig:Capacitances_g5_50}. From the figure it is possible to determine the finger length needed to achieve the target capacitance of 60 \(f\)F. For qubits with a finger width of  5 \(\mu\)m, 10 \(\mu\)m, and 20 \(\mu\)m, their length must be 87 \(\mu\)m, 76 \(\mu\)m, and 56 \(\mu\)m  respectively.   
+
 \begin{figure}
 	\centering
 	\includegraphics[width = \textwidth]{Figures/Capacitances_g5_50}
-	\caption{A plot of the capacitance as a function of finger length for several finger widths. dotted lines represent linear fits of the data. The horizontal dashed line is a guideline for the eye showing the necessary finger length to make a 60\(f\)F capacitor.}
+	\caption{A plot of the capacitance as a function of finger length for several finger widths. dotted lines represent linear fits of the data. The horizontal dashed line is a guideline for the eye showing the necessary finger length to make a 60\(f\)F capacitor; 87 \(\mu\)m, 76 \(\mu\)m, and 56 \(\mu\)m for qubits with a finger width of  5 \(\mu\)m, 10 \(\mu\)m, and 20 \(\mu\)m respectively.}
 	\label{fig:Capacitances_g5_50}
-\end{figure}
+\end{figure} 
+
+\clearpage
+
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale = 0.7]{Figures/Ratio_plots/FingerWidth_legend}
+ 	\caption{A plot of the different ratios for qubits with five fingers.  The length of the fingers has been adjusted for each qubit to reach a capacitance of 60 \(f\)F. For qubits with a finger width of  5 \(\mu\)m, 10 \(\mu\)m, and 20 \(\mu\)m, their lengths are 87 \(\mu\)m, 76 \(\mu\)m, and 56 \(\mu\)m  respectively.}
+ 	\label{fig:FingerWidth_legend}
+ \end{figure}
 
 \subsection{The participation ratios}
-Using the previous results several interdigitated qubits were designed to have a capacitance of 60 \(f\)F. An overview of the relevant parameters can be seen in table \ref{table:60fF_fingerlength}. The resulting participation ratios of the different lossy layers can be seen in the same table. As the finger width is increased and the finger length decreased, all participation ratios decrease. 
+Using the previous results several interdigitated qubits were designed to have a capacitance of 60 \(f\)F. An overview of the relevant parameters can be seen in table \ref{table:60fF_fingerlength}. The resulting participation ratios of the different lossy layers can be seen in the same table and are plotted in figure \ref{fig:FingerWidth_legend} for those qubits with 5 fingers. As the finger width is increased and the finger length decreased, all participation ratios decrease.
 
 \begin{table}
 	\begin{center}
@@ -63,38 +84,52 @@ Using the previous results several interdigitated qubits were designed to have a
 			Fingers  & Finger Width [\(\mu\)m] & Finger Length [\(\mu\)m]  & P ma &  Pms & P sa & P all \\ \hline
 			5 & 5 & 87 & 1.85e-04 & 1.60e-03 & 4.94e-04 & 2.28e-03 \\  
 			5 & 10 & 76 & 8.62e-05 & 8.45e-04 & 2.66e-04 & 1.20e-03 \\
-			5 & 20 & 56 & 1 & 1 &1  & 1 \\
+			5 & 20 & 56 & 5.43e-05 & 5.06e-04 & 1.70e-04 & 7.31e-04  \\
 			10 & 5 & 36 & 1.36e-04 & 1.30e-03 & 4.12e-04 & 1.85e-03 \\
 			10 & 10 & 26 & 7.56e-05 & 7.33e-04 & 2.46e-04 & 1.06e-03 \\
 			\hline
 		\end{tabular}
 	\end{center}
-	\caption{The relevant parameters for interdigitated qubit. For all designs the finger length has been tuned to result in a qubit with a capacitance of 60 \(f\)F. }
+	\caption{The relevant parameters for interdigitated qubit and the resulting participation ratios. For all designs the finger length has been tuned to result in a qubit with a capacitance of 60 \(f\)F. }
 	\label{table:60fF_fingerlength}
 \end{table}
 
 
 
-By default the corners of the fingers were rounded (as in figure \ref{fig:Yale_parameters2}). As this was not standard practice the influence of doing so was determined retroactively. To do so the corner radius of the fingers (with a width of 20 \(\mu\)m) was changed between 1 and 10 \(\mu\)m (10 \(\mu\)m making semi-circles at the finger tips). The resulting participation ratios can be seen in table \ref{table:ratio_cornerradius} and figure \ref{fig:}. All participation ratios tend to decrease as the corner radius is increased. 
+By default the corners of the fingers were rounded (as in figure \ref{fig:Yale_parameters2}). As this was not standard practice the influence of doing so was determined retroactively. To do so the corner radius of the fingers (with a width of 20 \(\mu\)m) was changed between 1 and 10 \(\mu\)m (10 \(\mu\)m making semi-circles at the finger tips). The resulting participation ratios can be seen in table \ref{table:ratio_cornerradius} and figure \ref{fig:CornerRadius}. All participation ratios tend to decrease as the corner radius is increased. 
+
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale = 0.7]{Figures/Ratio_plots/CornerRadius_legend}
+ 	\caption{A plot of the different participation for several corner radii. However slowly, all ratios tend to decrease with increasing radius.}
+ 	\label{fig:CornerRadius}
+ \end{figure}
 
 \begin{table}
 	\begin{center}
 		\begin{tabular}{ | l || c | c | c | c | c |}
 			\hline
 			Corner radius [\(\mu\)m] & P ma & P ms & P sa & P all \\ \hline
-			1 & 1 & 1 & 1 & 1 \\
+			1 & 6.30e-05 & 6.04e-04 & 1.83e-04 & 8.50e-04 \\
 			2 & 6.57e-05 & 6.00e-04 & 1.82e-04 & 8.47e-04 \\
 			5 & 6.62e-05 & 5.76e-04 & 1.78e-04 & 8.20e-04\\
-			8 & 5.07e-05 & 5.25e-04 & 1.63e-04 & 7.39e-04\\
-			10 & 1 & 1 & 1 & 1\\
+			8 & 6.18e-05 & 5.93e-04 & 1.80e-04 & 8.34e-04\\
+			10 & 5.43e-05 & 5.06e-04 & 1.70e-04 & 7.31e-04\\
 			\hline
 		\end{tabular}
 	\end{center}
-	\caption{caption here}
+	\caption{The participation ratios for different corner radii.}
 	\label{table:ratio_cornerradius}
 \end{table}
 
-The influence of the ground plane separation distance on the participation ratios was also determined. The distance was changed between 10 \(\mu\)m and 200 \(\mu\)m. The resulting participation ratios can be found in table \ref{table:ratio_groundseparation}. Again, all participation ratios show a downward trend with increasing separation distance. 
+The influence of the ground plane separation distance on the participation ratios was also determined. The distance was changed between 10 \(\mu\)m and 200 \(\mu\)m. The resulting participation ratios can be found in table \ref{table:ratio_groundseparation} and figure \ref{fig:SlotSize_legend}. Again, all participation ratios show a downward trend with increasing separation distance. The influence of increasing the the separation beyond 100 \(\mu\)m is very small.
+
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale = 0.7]{Figures/Ratio_plots/SlotSize_legend}
+ 	\caption{A plot of the different participation ratios for several separation distances to the ground plane. However slowly, all ratios tend to decrease with increasing separation.}
+ 	\label{fig:SlotSize_legend}
+ \end{figure}
 
 \begin{table}
 	\begin{center}
@@ -102,14 +137,14 @@ The influence of the ground plane separation distance on the participation ratio
 			\hline
 			Ground Separation [\(\mu\)m] & P ma & P ms & P sa & P all \\ \hline
 			10 & 5.71e-05 & 5.31e-04 & 1.78e-04 & 7.67e-04 \\
-			20 & 1 & 1 & 1 & 1 \\
+			20 & 5.43e-05 & 5.06e-04 & 1.70e-04 & 7.31e-04 \\
 			50 & 5.22e-05 & 5.04e-04 & 1.61e-04 & 7.17e-04 \\
 			100 & 4.82e-05 & 4.92e-04 & 1.54e-04 & 6.94e-04 \\
 			200 & 5.10e-05 & 4.90e-04 & 1.59e-04 & 7.00e-04\\
 			\hline
 		\end{tabular}
 	\end{center}
-	\caption{caption here}
+	\caption{The participation ratios for different ground separation distances.}
 	\label{table:ratio_groundseparation}
 \end{table}
 
@@ -117,9 +152,9 @@ Looking at these results for the interdigitated qubit design it can be seen that
 
 % \textit{Alternatively:}Extrapolating these changes would indicate that making the fingers ever shorter but wider would result in a qubit with even smaller participation ratios. The resulting qubit consists of two rectangular pads separated by the junction. 
 
+\clearpage
 \section{Parallel pad qubit}
-The resulting qubit design can be seen in figure \ref{fig:IBM_parameters23}. Due to its simplicity there are fewer ways of changing the qubit. The parameters under consideration are the pad separation, the pad width, and the radius of the corners. Again, first the influence different parameters have on the capacitance of the system was determined. Afterwards the participation ratios of different configurations were calculated.
-
+The resulting qubit design can be seen in figure \ref{fig:IBM_parameters23}. It consists of two large parallel pads which are connected two smaller pads with the inductor in-between. The ground plane consist of a square slot at a relatively large distance from the qubit. Due to its simplicity, there are fewer ways of changing the qubit. The parameters under consideration are the pad separation, the pad width, and the radius of the corners. Again, first, the influence different parameters have on the capacitance of the system was determined. Afterwards the participation ratios of different configurations were calculated.
 
 \begin{figure}[h]
 	\centering
@@ -128,33 +163,148 @@ The resulting qubit design can be seen in figure \ref{fig:IBM_parameters23}. Due
 		
 		\subfloat[Zoomed in view of the center of the qubit.]{{\includegraphics[width = \textwidth]{Figures/IBM_parameters2} }}
 	\end{tabular}
-	\caption{The parallel pad qubit design including parameters and dimensions valid for all iterations of the design. (a) W is the width of the pads, L is the length of the pad, the size of the grounded slot here is 650 \(\mu\)m. (b) 1 is the pad separation distance. 2 is the junction separation distance which is .5 \(mu\)m for all qubits. 3 is the length of the junction lead which depends only on the separation distance of the qubit.}
+	\caption{The parallel pad qubit design including parameters and dimensions valid for all iterations of the design. (a) W is the width of the pads, L is the length of the pad, the size of the grounded slot here is 650 \(\mu\)m. (b) 1 is the pad separation distance. 2 is the junction separation distance which is 0.5 \(\mu\)m for all qubits. 3 is the length of the junction lead which depends only on the separation distance of the qubit.}
 	\label{fig:IBM_parameters23}
 \end{figure}
 
 
 
 \subsection{The capacitance}
-Similar to adding extra fingers to the interdigitated qubit, widening the pad width is expected to linearly increase the capacitance of the system. The pad width was changed between 300 and 500 \(\mu\)m. The data shown in figure \ref{fig:} indeed shows a linear proportionality.
-The capacitance of a standard parallel plate capacitor is inversely proportional to the plate separation. Similar proportionality is expected for the parallel pad qubit system. The pad separation was set between 5 and 60 \(\mu\)m. The resulting capacitances can be seen in figure \ref{fig:}.
-Finally the radius of pads' corners are changed. They were set between 5 and 30 \(\mu\)m. The resulting capacitances are shown in figure \ref{fig:}.
+Similar to adding extra fingers to the interdigitated qubit, widening the pad width is expected to linearly increase the capacitance of the system. The pad width was changed between 300 and 500 \(\mu\)m. The data shown in figure \ref{fig:IBMCapVSWidth} indeed shows a linear proportionality.
 
+\begin{figure}
+	\centering
+	\includegraphics[scale = 0.7]{Figures/Capacitance_plots/IBMCapVSWidth}
+	\caption{The capacitance of parallel pad qubits with different pad widths.}
+	\label{fig:IBMCapVSWidth}
+\end{figure}
+
+The capacitance of a standard parallel plate capacitor is inversely proportional to the plate separation. Similar proportionality is expected for the parallel pad qubit system. The pad separation was set between 5 and 60 \(\mu\)m. The resulting capacitances can be seen in figure \ref{fig:IBMCapVSPadSep}.
+
+Finally the radius of pads' corners are changed. They were set between 5 and 30 \(\mu\)m. The resulting capacitances are shown in figure \ref{fig:IBMCapVSCornerRadius}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale = 0.7]{Figures/Capacitance_plots/IBMCapVSPadSep}
+	\caption{The capacitance of parallel pad qubits with different pad separation distances.}
+	\label{fig:IBMCapVSPadSep}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 0.7]{Figures/Capacitance_plots/IBMCapVSCornerRadius}
+	\caption{The capacitance of parallel pad qubits with different corner radii.}
+	\label{fig:IBMCapVSCornerRadius}
+\end{figure}
+
+\clearpage
 \subsection{The participation ratios}
  %The influence of the pad separation and the pad width on the participation ratios of the layers were determined. 
  Comparing the two qubit designs; increasing the finger width (and separation) in the interdigitated qubit can be seen as increasing the pad separation and pad width in the parallel pad qubit. Therefore the participation ratios are expected to decrease when increasing pad width or separation. The influence of three parameters on the participation ratios were investigated separately: the pad separation, the pad width, and the corner radius. Contrary to what was done during the investigation of the interdigitated qubit, the resonance frequencies of all parallel pad qubits were kept equal by changing the value of the inductance (see formula \eqref{eq:}). 
  
- Starting with the pad width which was again changed between 300 and 500 \(\mu\)m. Figure \ref{fig:} shows the resulting ratios, all of them decreasing with increasing width.
+ Starting with the pad width which was again changed between 300 and 500 \(\mu\)m. Table \ref{table:ratio_IBMPadWidth} and figure \ref{fig:IBMPadWidth_legend} show the resulting ratios, all of them decreasing with increasing width.
  
- Secondly, the separation between the two pads was changed between 5 and 60 \(\mu\)m. The results in figure \ref{fig:} again show decreasing ratios for all layers with increasing separation. 
+ \begin{table}
+ 	\begin{center}
+ 		\begin{tabular}{ | l || c | c | c | c | c |}
+ 			\hline
+ 			Pad Width [\(\mu\)m] & P ma & P ms & P sa & P all \\ \hline
+ 			300 & 4.71e-05 & 3.51e-04 & 1.08e-04 & 5.06e-04 \\
+ 			350 & 4.29e-05 & 3.44e-04 & 1.04e-04 & 4.91e-04 \\
+ 			400 & 4.27e-05 & 3.38e-04 & 1.02e-04 & 4.82e-04 \\
+ 			450 & 4.17e-05 & 3.32e-04 & 1.01e-04 & 4.74e-04 \\
+ 			500 & 4.04e-05 & 3.28e-04 & 9.92e-05 & 4.68e-04\\
+ 			\hline
+ 		\end{tabular}
+ 	\end{center}
+ 	\caption{The participation ratios of parallel pad qubits with different pad widths.}
+ 	\label{table:ratio_IBMPadWidth}
+ \end{table}
  
- Finally, the radius of the corners was changed between 5 and 30 \(\mu\)m, where a radius of 30 \(\mu\)m results in an semi-circle on the sides. Although the resulting ratios in figure \ref{fig:} show a decreasing trend, the change is much less significant compared to that of the interdigitated qubit.
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale = 0.7]{Figures/Ratio_plots/IBMPadWidth_legend}
+ 	\caption{The participation ratios of parallel pad qubits with different pad widths.}
+ 	\label{fig:IBMPadWidth_legend}
+ \end{figure}
  
-\section{Conclusion} %Grafieken niet in de conclusie! hier geen nieuwe informatie geven!
-To explain these results the actual electric field can be looked at. Figure \ref{fig:} shows a comparison of the electric field intensity belonging to parallel pad qubits with a width of 300 and 500 \(\mu\)m. \todo{Explain differences in field intensity}.
+ Secondly, the separation between the two pads was changed between 5 and 60 \(\mu\)m. The results in table \ref{table:IBMPadSep} and figure \ref{fig:IBMPadSep_legend} again show decreasing ratios for all layers with increasing separation. 
  
-Next, figure \ref{fig:} shows a comparison of the electric field intensity belonging to parallel pad qubits with a separation distance of 5 and 60 \(\mu\)m, a cross-section is also included. \todo{Explain differences in field intensity}.
+ \begin{table}
+ 	\begin{center}
+ 		\begin{tabular}{ | l || c | c | c | c | c |}
+ 			\hline
+ 			Pad Separation [\(\mu\)m] & P ma & P ms & P sa & P all \\ \hline
+ 			5 & 6.42e-05 & 5.59e-04 & 1.82e-04 & 8.42e-04 \\
+ 			10 & 4.65e-05 & 4.26e-04 & 1.28e-04 & 6.00e-04 \\
+ 			20 & 4.02e-05 & 3.21e-04 & 9.67e-05 & 4.58e-04 \\
+ 			50 & 3.35e-05 & 2.55e-04 & 7.70e-05 & 3.65e-04 \\
+ 			\hline
+ 		\end{tabular}
+ 	\end{center}
+ 	\caption{The participation ratios of parallel pad qubits with different pad separation distances.}
+ 	\label{table:IBMPadSep}
+ \end{table}
  
-Finally, figure \ref{fig:} shows a comparison of the electric field intensity belonging to both interdigitated and parallel pad qubit having partial of fully rounded corners. The difference is especially noticeable for the interdigitated qubits. \todo{Explain differences in field intensity}.
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale = 0.7]{Figures/Ratio_plots/IBMPadSep_legend}
+ 	\caption{The participation ratios of parallel pad qubits with different pad separation distances.}
+ 	\label{fig:IBMPadSep_legend}
+ \end{figure}
+ 
+ Finally, the radius of the corners was changed between 5 and 30 \(\mu\)m, where a radius of 30 \(\mu\)m results in an semi-circle on the sides. Although the resulting ratios in table \ref{table:IBMCornerRadius} and figure \ref{fig:IBMCornerRadius_legend} show a decreasing trend, the change is much less significant compared to that of the interdigitated qubit.
+ 
+ \begin{table}
+ 	\begin{center}
+ 		\begin{tabular}{ | l || c | c | c | c | c |}
+ 			\hline
+ 			Corner Radius [\(\mu\)m] & P ma & P ms & P sa & P all \\ \hline
+ 			5 & 3.74e-05 & 3.03e-04 & 9.53e-05 & 4.35e-04 \\
+ 			10 & 3.56e-05 & 3.01e-04 & 9.47e-05 & 4.31e-04 \\
+ 			15 & 3.67e-05 & 2.98e-04 & 9.60e-05 & 4.31e-04 \\
+ 			20 & 3.37e-05 & 3.00e-04 & 9.51e-05 & 4.29e-04 \\
+ 			25 & 3.47e-05 & 2.97e-04 & 9.41e-05 & 4.26e-04 \\
+ 			29 & 3.49e-05 & 2.99e-04 & 9.47e-05 & 4.28e-04 \\
+ 			\hline
+ 		\end{tabular}
+ 	\end{center}
+ 	\caption{The participation ratios of parallel pad qubits with different corner radii.}
+ 	\label{table:IBMCornerRadius}
+ \end{table}
+ 
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale = 0.7]{Figures/Ratio_plots/IBMCornerRadius_legend}
+ 	\caption{The participation ratios of parallel pad qubits with different corner radii.}
+ 	\label{fig:IBMCornerRadius_legend}
+ \end{figure}
+ 
+\clearpage
+\section{Further Discussion}
+Finally, to explain some of the results, the simulated electric fields can be looked at. Figure \ref{fig:CornerFields} shows the absolute value of the electric field around the corners of the interdigitated (a and b) and parallel pad qubits (c and d). The electric field is less concentrated when the corners are rounded. It appears these highly concentrated electric fields at the corners are a cause for higher participation ratios. The reduction of the participation ratios is most apparent for the interdigitated qubit which simply has more corners.
+
+ \begin{figure}
+ 	\begin{tabular}{c c}
+ 		\subfloat[Interdigitaded, finger slightly rounded]{{\includegraphics[width = \textwidth/2]{Figures/Fields/slightly_rounded_zoomed_cropped} }} & \subfloat[Interdigitaded, finger fully rounded]{{\includegraphics[width = \textwidth/2]{Figures/Fields/fully_rounded_zoomed_cropped} }} \\
+ 		\subfloat[Parallel pad, sharp corner]{{\includegraphics[width = \textwidth/2]{Figures/Fields/IBM_sharp_corner_cropped} }} & \subfloat[Parallel pad, rounded corner]{{\includegraphics[width = \textwidth/2]{Figures/Fields/IBM_rounded_corner_r5_cropped} }}
+	 \end{tabular}	
+ 	\centering	
+ 	\caption{The absolute value of the electric field in the area around corners. The rounding of the corners results in less concentrated electric fields.}
+ 	\label{fig:CornerFields}
+ \end{figure}
+
+ 
+Figure \ref{fig:} shows a the electric field on a cross-section of the parallel pad qubit with different pad separation distances, XXX \(\mu\)m away from the junction.
+
+
+%\section{Conclusion} %Grafieken niet in de conclusie! hier geen nieuwe informatie geven!
+%To explain these results the actual electric field can be looked at. Figure \ref{fig:} shows a comparison of the electric field intensity belonging to parallel pad qubits with a width of 300 and 500 \(\mu\)m. \todo{Explain differences in field intensity}.
+% 
+%Next, figure \ref{fig:} shows a comparison of the electric field intensity belonging to parallel pad qubits with a separation distance of 5 and 60 \(\mu\)m, a cross-section is also included. \todo{Explain differences in field intensity}.
+% 
+%Finally, figure \ref{fig:} shows a comparison of the electric field intensity belonging to both interdigitated and parallel pad qubit having partial of fully rounded corners. The difference is especially noticeable for the interdigitated qubits. \todo{Explain differences in field intensity}.
   
 
 

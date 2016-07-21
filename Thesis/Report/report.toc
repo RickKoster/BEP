@@ -22,27 +22,26 @@
 \contentsline {subsection}{\numberline {3.4.1}Ground}{6}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Pads}{6}{subsection.3.4.2}
 \contentsline {chapter}{\numberline {4}Results and Discussion}{9}{chapter.4}
-\contentsline {section}{\numberline {4.1}Interdigitated qubit}{9}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}The capacitance}{9}{subsection.4.1.1}
-\contentsline {subsubsection}{Ground plane separation}{9}{section*.15}
-\contentsline {subsubsection}{The fingers}{9}{section*.16}
-\contentsline {subsection}{\numberline {4.1.2}The participation ratios}{12}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Parallel pad qubit}{12}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}The capacitance}{13}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}The participation ratios}{13}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Conclusion}{13}{section.4.3}
-\contentsline {chapter}{Bibliography}{15}{appendix*.26}
-\contentsline {chapter}{Appendix \numberline {A}CST procedure}{17}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Creating a new project}{17}{section.1.A.1}
-\contentsline {section}{\numberline {A.2}The capacitance}{17}{section.1.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Modeling}{18}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Meshing}{18}{subsection.1.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Post processing}{18}{subsection.1.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Simulation setup}{19}{subsection.1.A.2.4}
-\contentsline {section}{\numberline {A.3}The electric field}{19}{section.1.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Modeling}{20}{subsection.1.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Meshing}{21}{subsection.1.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Simulation setup}{21}{subsection.1.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}Exporting data}{21}{subsection.1.A.3.4}
-\contentsline {chapter}{Appendix \numberline {B}Matlab procedure}{23}{Appendix.1.B}
+\contentsline {section}{\numberline {4.1}Interdigitated qubit}{10}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The capacitance}{10}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}The participation ratios}{13}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Parallel pad qubit}{16}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}The capacitance}{16}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}The participation ratios}{19}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Further Discussion}{21}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{23}{chapter.5}
+\contentsline {chapter}{Bibliography}{25}{appendix*.35}
+\contentsline {chapter}{Appendix \numberline {A}CST procedure}{27}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Creating a new project}{27}{section.1.A.1}
+\contentsline {section}{\numberline {A.2}The capacitance}{27}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Modeling}{28}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Meshing}{28}{subsection.1.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Post processing}{28}{subsection.1.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Simulation setup}{29}{subsection.1.A.2.4}
+\contentsline {section}{\numberline {A.3}The electric field}{29}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Modeling}{30}{subsection.1.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Meshing}{31}{subsection.1.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Simulation setup}{31}{subsection.1.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}Exporting data}{31}{subsection.1.A.3.4}
+\contentsline {chapter}{Appendix \numberline {B}Matlab procedure}{33}{Appendix.1.B}
 \contentsfinish 

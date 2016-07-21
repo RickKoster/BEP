@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -46,5 +46,17 @@ C.~Wang, C.~Axline, Y.~Y. Gao, T.~Brecht, L.~Frunzio, M.~H. Devoret, and R.~J.
 \newblock Surface participation and dielectric loss in superconducting qubits.
 \newblock \emph{Applied Physics Letters}, 107, September 2015.
 \newblock \doi{10.1063/1.4934486}.
+
+\bibitem[Wenner et~al.(2011)Wenner, Barends, Bialczak, Chen, Kelly, Lucero,
+  Mariantoni, Megrant, O’Malley, Sank, Vainsencher, Wang, White, Yin, Zhao,
+  Cleland, and Martinis]{Wenner2011}
+J.~Wenner, R.~Barends, R.~C. Bialczak, Yu~Chen, J.~Kelly, E.~Lucero,
+  M.~Mariantoni, A.~Megrant, P.~J.~J. O’Malley, D.~Sank, A.~Vainsencher,
+  H.~Wang, T.~C. White, Y.~Yin, J.~Zhao, A.~N. Cleland, and John~M. Martinis.
+\newblock Surface loss simulations of superconducting coplanar waveguide
+  resonators.
+\newblock \emph{Applied Physics Letters}, 99, 2011.
+\newblock \doi{10.1063/1.3637047}.
+\newblock URL \url{http://dx.doi.org/10.1063/1.3637047}.
 
 \end{thebibliography}

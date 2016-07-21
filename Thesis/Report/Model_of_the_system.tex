@@ -13,8 +13,8 @@ Certain choices of materials and dimensions are valid for all qubit designs in t
 		\begin{tabular}{ | l || c | c | c |}
 			\hline
 			 & Material & Thickness & Dielectric constant \\ \hline
-			Pads & PEC & 10 um & 1 \\
-			Substrate & Silicon & 520 um & 11.45 \\
+			Pads & PEC & 10 \(\mu\)m & 1 \\
+			Substrate & Silicon & 520 \(\mu\)m & 11.45 \\
 			Ground & PEC & - & 1 \\
 			MA & NbO & \textasciitilde 3 nm & 10 \\
 			MS & SiN & \textasciitilde 3 nm & 7.5 \\
@@ -28,8 +28,8 @@ Certain choices of materials and dimensions are valid for all qubit designs in t
 
 
 \section{Lossy layers}
-The material layers present on the different material interfaces are assumed to have an equal thickness of around 3 nm \todo{source}. Different layers do have distinct material compositions. The dominant materials are Niobium Oxides (NbO), Silicon Oxides (SiO), and Silicon Nitrides (SiN) for the Metal-Air (MA), Substrate-Air (SA), and Metal-Substrate (MS) interfaces respectively. An overview is given in table \ref{table:standard_parameters}.  A simple representation of the structure can be seen in figure~\ref{fig:model}.
-The relatively small thickness of the layers suggests that the impact they have on the electric field is small\todo{SOURCE?}. During simulation their impact is neglected and the layers are therefore omitted. The exclusion of thin lossy layers prevents the necessity for mesh elements with sub-nano meter size. This significantly reduces the number of mesh elements and allows for the simulation on the system in its entirety.
+The material layers present on the different material interfaces are assumed to have an equal thickness of around 3 nm \cite{Wenner2011}. Different layers do have distinct material compositions. The dominant materials are Niobium Oxides (NbO), Silicon Oxides (SiO), and Silicon Nitrides (SiN) for the Metal-Air (MA), Substrate-Air (SA), and Metal-Substrate (MS) interfaces respectively. An overview is given in table \ref{table:standard_parameters}.  A simple representation of the structure can be seen in figure~\ref{fig:model}.
+The relatively small thickness of the layers suggests that the impact they have on the electric field is small\todo{SOURCE needed?}. During simulation their impact is neglected and the layers are therefore omitted. The exclusion of thin lossy layers prevents the necessity for mesh elements with sub-nano meter size. This significantly reduces the number of mesh elements and allows for the simulation on the system in its entirety.
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=.8]{Figures/model}
@@ -45,12 +45,24 @@ To reduce simulation times the initial mesh is of critical importance. After eac
 \subsection{Ground}
 To reduce the number of mesh elements, the ground pad is replaced by a sheet of PEC with zero thickness. Considering the field in the ground region is small compared to the field at the edges of the pads its contribution to the participation ratio is also small. Investing more computation time on the ground plane region by increasing the density of mesh elements there, would therefore also have limited impact on the participation ratio.
 \subsection{Pads}
-The pads being the source of the electric field, it is to be expected that the intensity will be greatest in this region. Furthermore, electric field lines tend to have a higher density at the edges of a metal \todo{Source or reference to Theory}. Considering this, the intensity of the electric field in the entire system is expected to be greatest around the edges of the metal pads. The initial mesh should reflect this by being very fine in these regions. In order to achieve this the edges of the metal pads are rounded as in figure \ref{fig:blending4} \todo{Print figure here as well, including resulting mesh?}.The steps taken to achieve this in CST can be found in appendix \ref{appendix:CST_procedure}. 
-
+The pads being the source of the electric field, it is to be expected that the intensity will be greatest in this region. Furthermore, electric field lines tend to have a higher density at the edges of a metal \todo{Source or reference to Theory}. Considering this, the intensity of the electric field in the entire system is expected to be greatest around the edges of the metal pads. The initial mesh should reflect this by being very fine in these regions. In order to achieve this the edges of the metal pads are rounded as in figure \ref{fig:blending4}. A comparison between the resulting mesh and a standard initial mesh is depicted in figure \ref{fig:TotalMesh}. The difference is significant; an increase of mesh element count from 10776 to 590570. It would take CST around 8 iterations to achieve similar mesh element counts. The exact steps taken to achieve this in CST can be found in appendix \ref{appendix:CST_procedure}. 
 
 \begin{figure}
 	\centering
 	\includegraphics[scale=.5]{Figures/blending4}
 	\caption{An illustration of the blending of the pad edges. The bottom pad has been blended whereas the top pad has not.}
 	\label{fig:blending4}
+\end{figure}
+
+\begin{figure}
+	\begin{tabular}{c c}
+		\subfloat[Simple mesh] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_simple_cropped} }}
+		& \subfloat[Refined mesh] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_refined_cropped} }} \\
+		\subfloat[Simple mesh, junction] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_simple_zoomed_highlighted} }}
+		& \subfloat[Refined mesh, junction] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_refined_zoomed_highlighted} }}
+				
+		
+	\end{tabular}
+	\caption{A comparison of the initial mesh before (a and c) and after (b and d) blending of the pad edges. (c) and (d) show the region close to the junction leads which are in the very centre in (a) and (b). The edges of the pads are highlighted in red. The total mesh element count is 10776 and 590570 for the simple and refined mesh respectively.}
+	\label{fig:TotalMesh}
 \end{figure}

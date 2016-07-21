@@ -95,3 +95,11 @@ b0 = [5e-12,0,3.5e-14];                      % Initial Parameter Estimates
 
 hold on
 plot(x,  B(1)./(x + B(2)) + B(3));
+
+%% Cap VS Corner Radius
+
+figure
+x = [5 10 15 20 25 29];
+plot(x, IBMCapR5_29,'bs-', 'MarkerFaceColor', 'b', 'LineWidth', 2, 'MarkerSize', 8)
+xlabel('Corner Radius [\mum]');
+ylabel('Capacitance [F]');
