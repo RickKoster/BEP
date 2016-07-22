@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -20,6 +20,15 @@ Amit Hagar and Michael Cuffaro.
 \newblock 2015.
 \newblock URL
   \url{http://plato.stanford.edu/archives/sum2015/entries/qt-quantcomp/}.
+
+\bibitem[Ithier et~al.(2005)Ithier, Collin, Joyez, Esteve, Shnirman, Makhlin,
+  and Schon]{Ithier2005}
+G.~Ithier, E.~Collin, P.J. andVion~D. Joyez, P.~andMeeson, F.~Esteve,
+  D.~andChiarello, A.~Shnirman, J.~Makhlin, Y.~andSchriefl, and G.~Schon.
+\newblock Decoherence in a superconducting quantum bit circuit.
+\newblock \emph{Phys. Rev. Lett.}, Aug 2005.
+\newblock \doi{10.1103/PhysRevB.72.134519}.
+\newblock URL \url{https://arxiv.org/abs/cond-mat/0508588}.
 
 \bibitem[Koch et~al.(2007)Koch, Yu, Gambetta, Houck, Schuster, Majer, Blais,
   Devoret, Girvin, and Schoelkopf]{Koch2007}
