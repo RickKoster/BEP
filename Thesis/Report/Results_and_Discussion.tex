@@ -4,7 +4,7 @@ The starting point of this project was the familiar interdigitated qubit (see fi
 %%The main focus during this project rested on two distinct qubit designs, namely the interdigitated and the parallel pad qubits. The two designs can be compared in figure \ref{fig:}.
 
 
-First, the influence of different parameters on the capacitance of structures was determined. This knowledge enables designing structures with a specific capacitance necessary for a qubit with a certain frequency (see equation \eqref{eq:}). The target capacitance is 60 \(f\)F. With an inductor having an inductance of 10 \(n\)H this result in a resonance frequency of around 6.5 \(G\)Hz.
+First, the influence of different parameters on the capacitance of structures was determined. This knowledge enables designing structures with a specific capacitance necessary for a qubit with a certain frequency (see equation \eqref{eq:}). The target capacitance is 60 \(f\)F. With an inductor having an inductance of 10 \(n\)H this result in a resonance frequency of around 6.5 \(G\)Hz. \todo{HOW is the capacitance retrieved? refer to appendix?}
 
 
 Secondly, the participation ratio of the lossy layers is determined. This will give insight into what design decisions can be made to reduce these participation ratios.\\
@@ -21,13 +21,13 @@ Taking these insights into account, a second qubit design was investigated in si
 
 \clearpage
 \section{Interdigitated qubit}
-As the name suggests the interdigitated qubit consists of two pads having a certain amount of fingers. The pads are positioned such that the fingers are at an equal distance from each other. The distance between the inductor and the first finger was set to 40 \(\mu\)m for all interdigitated qubit designs. An overview of the design with its parameters is depicted in figure \ref{fig:Yale_parameters2}
+As the name suggests the interdigitated qubit consists of two pads having a certain amount of fingers. The pads are positioned such that the gap between the two pads is of equal size (G) along all fingers. The distance between the Josephson junction and the first finger was set to 40 \(\mu\)m for all interdigitated qubit designs. An overview of the design with its parameters is depicted in figure \ref{fig:Yale_parameters2}
 
 
 
 
 \subsection{The capacitance}
-To better determine the influence of the pad design on the capacitance of the system, the influence of the ground plane is determined as a function of separation distance. Figure \ref{fig:capacitance_vs_slotsize} indicates that the influence of the ground plane on the capacitance of the system decreases rapidly with increasing separation distance. The influence of the ground plane becomes insignificant only at a separation distance of around 100 \(\mu\)m. So, in order to determine the influence of changes in pad design on the capacitance (and participation ratio) of the system, the separation distance of the ground plane should be carefully kept equal among pad designs. \todo{Or I should have eliminated the ground plane altogether when determining the influence of certain parameters.} 
+To better determine the influence of the pad design on the capacitance of the system, the influence of the ground plane is determined as a function of separation distance. Figure \ref{fig:capacitance_vs_slotsize} shows the capacitance of the qubit as a function of the separation distance of the ground plane (D). It indicates that the influence of the ground plane on the capacitance of the system decreases rapidly with increasing separation distance. The influence of the ground plane becomes insignificant only at a separation distance of around 100 \(\mu\)m. So, in order to determine the influence of changes in pad design on the capacitance (and participation ratio) of the system, the separation distance of the ground plane should be carefully kept equal among pad designs. \todo{Or I should have eliminated the ground plane altogether when determining the influence of certain parameters.} 
 
 \begin{figure}
 	\centering
@@ -122,7 +122,7 @@ By default the corners of the fingers were rounded (as in figure \ref{fig:Yale_p
 	\label{table:ratio_cornerradius}
 \end{table}
 
-The influence of the ground plane separation distance on the participation ratios was also determined. The distance was changed between 10 \(\mu\)m and 200 \(\mu\)m. The resulting participation ratios can be found in table \ref{table:ratio_groundseparation} and figure \ref{fig:SlotSize_legend}. Again, all participation ratios show a downward trend with increasing separation distance. The influence of increasing the the separation beyond 100 \(\mu\)m is very small.
+The influence of the ground plane separation distance on the participation ratios was also determined. The distance (D in figure \ref{fig:Yale_parameters2}) was changed between 10 \(\mu\)m and 200 \(\mu\)m. The resulting participation ratios can be found in table \ref{table:ratio_groundseparation} and figure \ref{fig:SlotSize_legend}. Again, all participation ratios show a downward trend with increasing separation distance. The influence of increasing the the separation beyond 100 \(\mu\)m is very small.
 
  \begin{figure}
  	\centering
