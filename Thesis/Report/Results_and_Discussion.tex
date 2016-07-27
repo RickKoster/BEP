@@ -21,12 +21,10 @@ Taking these insights into account, a second qubit design was investigated in si
 
 \clearpage
 \section{Interdigitated qubit}
-As the name suggests the interdigitated qubit consists of two pads having a certain amount of fingers. The pads are positioned such that the gap between the two pads is of equal size (G) along all fingers. The distance between the Josephson junction and the first finger was set to 40 \(\mu\)m for all interdigitated qubit designs. An overview of the design with its parameters is depicted in figure \ref{fig:Yale_parameters2}
-
-
-
+As the name suggests the interdigitated qubit consists of two pads having a certain amount of fingers. The pads are positioned such that the gap between the two pads is of equal size (G) along all fingers. The distance between the Josephson junction and the first finger was set to 40 \(\mu\)m for all interdigitated qubit designs. The width (W) of the fingers is always kept equal to the gap (G) between the fingers. The distance between the pads and the groud (D) is the same on all sides. The last parameter is the length (L) of the fingers. An overview of the design with its parameters is depicted in figure \ref{fig:Yale_parameters2}.
 
 \subsection{The capacitance}
+The capacitance of the system is retrieved by a separate simulation, detailed in appendix \ref{appendix:CST_procedure}. It is used to calculate the total energy stored the qubit at resonance (see equation \eqref{eq:totalenergy}).
 To better determine the influence of the pad design on the capacitance of the system, the influence of the ground plane is determined as a function of separation distance. Figure \ref{fig:capacitance_vs_slotsize} shows the capacitance of the qubit as a function of the separation distance of the ground plane (D). It indicates that the influence of the ground plane on the capacitance of the system decreases rapidly with increasing separation distance. The influence of the ground plane becomes insignificant only at a separation distance of around 100 \(\mu\)m. So, in order to determine the influence of changes in pad design on the capacitance (and participation ratio) of the system, the separation distance of the ground plane should be carefully kept equal among pad designs. \todo{Or I should have eliminated the ground plane altogether when determining the influence of certain parameters.} 
 
 \begin{figure}
@@ -36,8 +34,8 @@ To better determine the influence of the pad design on the capacitance of the sy
 	\label{fig:capacitance_vs_slotsize}
 \end{figure}
 
-For the interdigitated pad design specifically, the first parameter under investigation is the amount of 'fingers' in the  qubit. The capacitances of qubits with 4 to 9 fingers were determined. The finger length, width and separation were not changed.
-As can be seen in figure \ref{fig:CapVSFingers}, the relationship appears to be linear. This can be explained by viewing the addition of a finger as the addition of an extra capacitor in parallel.\\
+For the interdigitated pad design specifically, the first parameter under investigation is the amount of 'fingers' in the  qubit. The capacitances of qubits with 4 to 9 fingers were determined. The finger length (\(L=56\mu m\)), width and gap (\(W=G=20\mu m\)) were not changed.
+As can be seen in figure \ref{fig:CapVSFingers} where the capacitance of systems with 4 to 9 fingers has been depicted, the relationship appears to be linear. This can be explained by viewing the addition of a finger as the addition of an extra capacitor in parallel.
 
 \begin{figure}
 	\centering
@@ -46,7 +44,7 @@ As can be seen in figure \ref{fig:CapVSFingers}, the relationship appears to be 
 	\label{fig:CapVSFingers}
 \end{figure}
 
-Next the influence of the finger width is determined. The finger separation is kept equal to the finger width. For a design with five fingers the results are depicted in figure \ref{fig:CapVSWidthL10}. \\
+Next the influence of the finger width (W) is determined. The finger separation (G) is kept equal to the finger width. For a design with five fingers (\(L=56\mu m\)) and ground separation distance \(D = 20\mu m\), the finger width was changed between \(5\) and \(50\mu m\). The resulting capacitances are depicted in figure \ref{fig:CapVSWidthL10}.
 
 \begin{figure}
 	\centering
@@ -55,8 +53,8 @@ Next the influence of the finger width is determined. The finger separation is k
 	\label{fig:CapVSWidthL10}
 \end{figure}
 
-Having determined the dependencies, qubits can be designed to have specific capacitances. Keeping all other parameters equal, the capacitance of earlier systems was tuned by adjusting the length of the fingers. For qubits with 5 fingers and a finger width of 5 to 50 \(\mu\)m the finger length was adjusted between 10 and 100 \(\mu\)m. \\
-The results are combined in figure \ref{fig:Capacitances_g5_50}. From the figure it is possible to determine the finger length needed to achieve the target capacitance of 60 \(f\)F. For qubits with a finger width of  5 \(\mu\)m, 10 \(\mu\)m, and 20 \(\mu\)m, their length must be 87 \(\mu\)m, 76 \(\mu\)m, and 56 \(\mu\)m  respectively.   
+Having determined the dependencies, qubits can be designed to have specific capacitances. Keeping all other parameters equal, the capacitance of earlier systems was tuned by adjusting the length of the fingers. For qubits with 5 fingers and a finger width of 5 to 50 \(\mu\)m, and a ground separation distance \(D = 20\mu m\), the finger length was adjusted between 10 and 100 \(\mu\)m. \\
+The results are combined in figure \ref{fig:Capacitances_g5_50}. It shows the capacitance as a function of finger length (L) for systems with a finger width (W) of 5, 10, 20, and 50 \(\mu\ m\). From the figure it is possible to determine the finger length needed to achieve the target capacitance of 60 \(f\)F. For qubits with a finger width of  5 \(\mu\)m, 10 \(\mu\)m, and 20 \(\mu\)m, their length must be 87 \(\mu\)m, 76 \(\mu\)m, and 56 \(\mu\)m  respectively.   
 
 \begin{figure}
 	\centering
@@ -75,7 +73,7 @@ The results are combined in figure \ref{fig:Capacitances_g5_50}. From the figure
  \end{figure}
 
 \subsection{The participation ratios}
-Using the previous results several interdigitated qubits were designed to have a capacitance of 60 \(f\)F. An overview of the relevant parameters can be seen in table \ref{table:60fF_fingerlength}. The resulting participation ratios of the different lossy layers can be seen in the same table and are plotted in figure \ref{fig:FingerWidth_legend} for those qubits with 5 fingers. As the finger width is increased and the finger length decreased, all participation ratios decrease.
+Using the previous results several interdigitated qubits were designed to have a capacitance of 60 \(f\)F. An overview of the relevant parameters can be seen in table \ref{table:60fF_fingerlength}. For all qubit designs the ground separation distance (D) is \(20 \mu m\). The resulting participation ratios of the different lossy layers can be seen in the same table. For the qubit with 5 fingers they are also plotted as a function of finger width (W) in figure \ref{fig:FingerWidth_legend}. As the finger width is increased and the finger length decreased, all participation ratios decrease.
 
 \begin{table}
 	\begin{center}
@@ -96,7 +94,7 @@ Using the previous results several interdigitated qubits were designed to have a
 
 
 
-By default the corners of the fingers were rounded (as in figure \ref{fig:Yale_parameters2}). As this was not standard practice the influence of doing so was determined retroactively. To do so the corner radius of the fingers (with a width of 20 \(\mu\)m) was changed between 1 and 10 \(\mu\)m (10 \(\mu\)m making semi-circles at the finger tips). The resulting participation ratios can be seen in table \ref{table:ratio_cornerradius} and figure \ref{fig:CornerRadius}. All participation ratios tend to decrease as the corner radius is increased. 
+By default the corners of the fingers were rounded (as in figure \ref{fig:Yale_parameters2}). As this was not standard practice the influence of doing so was determined retroactively. To do so the corner radius of the fingers (with a width of 20 \(\mu\)m) was changed between 1 and 10 \(\mu\)m (10 \(\mu\)m making semi-circles at the finger tips). The qubit had 5 fingers with a width (W) and gap (G) of \(20 \mu m\), a finger length (L) of \(56 \mu m\), and a pad separation distance (D) of \(20 \mu m\). The resulting participation ratios can be seen in table \ref{table:ratio_cornerradius} and figure \ref{fig:CornerRadius} as a function of corner radius. All participation ratios tend to decrease as the corner radius is increased. 
 
  \begin{figure}
  	\centering
@@ -122,7 +120,7 @@ By default the corners of the fingers were rounded (as in figure \ref{fig:Yale_p
 	\label{table:ratio_cornerradius}
 \end{table}
 
-The influence of the ground plane separation distance on the participation ratios was also determined. The distance (D in figure \ref{fig:Yale_parameters2}) was changed between 10 \(\mu\)m and 200 \(\mu\)m. The resulting participation ratios can be found in table \ref{table:ratio_groundseparation} and figure \ref{fig:SlotSize_legend}. Again, all participation ratios show a downward trend with increasing separation distance. The influence of increasing the the separation beyond 100 \(\mu\)m is very small.
+The influence of the ground plane separation distance on the participation ratios was also determined. The distance (D in figure \ref{fig:Yale_parameters2}) was changed between 10 \(\mu\)m and 200 \(\mu\)m. The resulting participation ratios can be found in table \ref{table:ratio_groundseparation} and in figure \ref{fig:SlotSize_legend} as a function of separation distance. Again, all participation ratios show a downward trend with increasing separation distance. The influence of increasing the the separation beyond 100 \(\mu\)m is very small.
 
  \begin{figure}
  	\centering
@@ -154,7 +152,7 @@ Looking at these results for the interdigitated qubit design it can be seen that
 
 \clearpage
 \section{Parallel pad qubit}
-The resulting qubit design can be seen in figure \ref{fig:IBM_parameters23}. It consists of two large parallel pads which are connected two smaller pads with the inductor in-between. The ground plane consist of a square slot at a relatively large distance from the qubit. Due to its simplicity, there are fewer ways of changing the qubit. The parameters under consideration are the pad separation, the pad width, and the radius of the corners. Again, first, the influence different parameters have on the capacitance of the system was determined. Afterwards the participation ratios of different configurations were calculated.
+The resulting qubit design can be seen in figure \ref{fig:IBM_parameters23}. It consists of two large parallel pads which are connected two smaller pads with the inductor in-between. The ground plane surrounds a square slot at a relatively large distance from the qubit. Due to its simplicity, there are fewer ways of changing the qubit. The parameters under consideration are the pad separation (S), the pad width (W), and the radius of the corners. Again, first, the influence different parameters have on the capacitance of the system was determined. Afterwards the participation ratios of different configurations were calculated.
 
 \begin{figure}[h]
 	\centering
@@ -163,7 +161,7 @@ The resulting qubit design can be seen in figure \ref{fig:IBM_parameters23}. It 
 		
 		\subfloat[Zoomed in view of the center of the qubit.]{{\includegraphics[width = \textwidth]{Figures/IBM_parameters2} }}
 	\end{tabular}
-	\caption{The parallel pad qubit design including parameters and dimensions valid for all iterations of the design. (a) W is the width of the pads, L is the length of the pad, the size of the grounded slot here is 650 \(\mu\)m. (b) 1 is the pad separation distance. 2 is the junction separation distance which is 0.5 \(\mu\)m for all qubits. 3 is the length of the junction lead which depends only on the separation distance of the qubit.}
+	\caption{The parallel pad qubit design including parameters and dimensions valid for all iterations of the design. (a) W is the width of the pads, L is the length of the pad, the size of the grounded slot here is 650 \(\mu\)m. (b) 'S' is the pad separation distance. 'J' is the junction separation distance, which is 0.5 \(\mu\)m for all qubits. 'K' is the length of the junction lead which depends only on the separation distance of the qubit.}
 	\label{fig:IBM_parameters23}
 \end{figure}
 

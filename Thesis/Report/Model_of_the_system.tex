@@ -3,10 +3,10 @@ This chapter will start by giving a model of the transmon qubit. This model will
 %reduce simulation times and \ldots.
  
 \section{Model of the transmon qubit}
-The model of the transmon qubit consists of a Josephson junction, two superconducting pads, a grounded superconducting pad surrounding the junction and pads, and the substrate on which everything is mounted. Furthermore, the material interfaces all have a lossy layer deposited on them during production. These layers will be discussed separately in a section below. The alloy used for the pads and ground is Niobium-titanium (NbTi) which is superconducting when cooled below 9.2 Kelvin \cite{LandoltBornstein1994}. The substrate consist of silicon, which has a dielectric constant of 11.45 at these temperatures \todo{citation}. 
+The model of the transmon qubit consists of a Josephson junction, two superconducting pads, a grounded superconducting pad surrounding the junction and pads, and the substrate on which everything is mounted. Furthermore, the material interfaces all have a lossy layer deposited on them during production. These layers will be discussed separately in a section below. The alloy used for the pads and ground is Niobium-titanium (NbTi) which is superconducting when cooled below 9.2 Kelvin \cite{LandoltBornstein1994} and will be treated as a Perfect Electric Conductor (PEC). The substrate consist of silicon, which has a dielectric constant of 11.45 at these temperatures \todo{citation}. 
 
 \subsection{Lossy layers}
-The lossy layers present on the different material interfaces are assumed to have an equal thickness of around 3 nm \cite{Wenner2011}. Different layers do have distinct material compositions. The dominant materials are Niobium Oxides (NbO), Silicon Oxides (SiO), and Silicon Nitrides (SiN) for the Metal-Air (MA), Substrate-Air (SA), and Metal-Substrate (MS) interfaces respectively. A simple representation of the structure can be seen in figure \ref{fig:model}. It displays a cross-section of the qubit near the edge of a superconducting pad. Certain choices of materials and dimensions are valid for all qubit designs in this project. They are listed in table \ref{table:standard_parameters} below.
+The lossy layers present on the different material interfaces are assumed to have an equal thickness of around 3 nm \cite{Wenner2011}. Different layers do have distinct material compositions. The dominant materials are Niobium Oxides (NbO), Silicon Oxides (SiO), and Silicon Nitrides (SiN) for the Metal-Air (MA), Substrate-Air (SA), and Metal-Substrate (MS) interfaces respectively. These materials have different dielectric constants; 10 for Niobium Oxides, 7.5 for Silicon Nitrides, and 3.9 for the Silicon Oxides. A simple representation of the structure can be seen in figure \ref{fig:model}. It displays a cross-section of the qubit near the edge of a superconducting pad. Certain choices of materials and dimensions are valid for all qubit designs in this project. The thickness of the superconducting pads is always 10 \(\mu\)m and height of the silicon substrate is 520 \(\mu\)m. An overview of the above is listed in table \ref{table:standard_parameters} below.
 
 \begin{figure}
 	\begin{center}
@@ -51,25 +51,36 @@ The electric field retrieved from the simulation will be that on 'outside' of th
 	\end{equation}
 \end{subequations}
 
-Where \(E_{A}^{\bot}\), \(E_{S}^{\bot}\), \(E_{A}^{\parallel}\) and \(E_{S}^{\bot}\) are the value retrieved from the simulation. With equations \eqref{eq:LossyLayerFields} the energy stored in the electric field inside the layers can calculated by rewriting equation \eqref{eq:energy_layer} as follows:
+Where \(E_{A}^{\bot}\), \(E_{S}^{\bot}\), \(E_{A}^{\parallel}\) and \(E_{S}^{\bot}\) are the components of the field at specific interface, which are retrieved from the simulation. With equations \eqref{eq:LossyLayerFields} the energy stored in the electric field inside the layers can calculated by rewriting equation \eqref{eq:energy_layer} as follows:
 
 \begin{subequations}\label{eq:LossyLayerEnergy}
 	\begin{equation} \label{eq:LossyLayerEnergyA}
-	W_{MA} =\frac{1}{2}\epsilon_MA^{-1}t_{MA}\int_{MA}^{}|E_{A}^{\bot}|^{2}dA
+		\begin{align*}
+			W_{MA} &=\frac{1}{2}\epsilon_{MA}t_{MA}\int_{MA}^{}|E_{MA}|^{2}dA \\
+				   &=\frac{1}{2}\epsilon_{MA}t_{MA}\int_{MA}^{}|\frac{E_{A}^{\bot}}{\epsilon_{MA}}|^{2}dA \\
+				   &=\frac{1}{2}\epsilon_{MA}^{-1}t_{MA}\int_{MA}^{}|E_{A}^{\bot}|^{2}dA
+		\end{align*}
 	\end{equation}	
 	\begin{equation} \label{eq:LossyLayerEnergyB}
-	W_{MS} = \frac{1}{2}\frac{\epsilon_{S}^{2}}{\epsilon_{MS}}t_{MS}\int_{MS}^{}|E_{S}^{\bot}|^{2} 
+		\begin{align*}
+			W_{MS} &=\epsilon_{MS}\int_{MS}^{}|E_{MS}|^{2} \\
+			&=\epsilon_{MS}\int_{MS}^{}|\frac{E_{S}^{\bot}\epsilon_{S}}{\epsilon_{MS}}|^{2}\\ 
+			&=\frac{1}{2}\frac{\epsilon_{S}^{2}}{\epsilon_{MS}}t_{MS}\int_{MS}^{}|E_{S}^{\bot}|^{2} 
+		\end{align*}
 	\end{equation}
 	\begin{equation}\label{eq:LossyLayerEnergyC}
-	E_{SA} = \frac{1}{2}\epsilon_{SA}^{-1}t_{SA}\int_{SA}^{}|E_{A}^{\bot}|^{2} +\frac{1}{2} \epsilon_{SA}t_{SA}\int_{SA}^{}|E_{A}^{\parallel}|^{2}dA
+		\begin{align*}
+			W_{SA} &=\frac{1}{2}\epsilon_{SA}^{}t_{SA}\int_{SA}^{}(|E_{SA}^{\bot}|^{2} + |E_{SA}^{\parallel}|^{2})\\
+			&=\frac{1}{2}\epsilon_{SA}^{-1}t_{SA}\int_{SA}^{}|E_{A}^{\bot}|^{2} +\frac{1}{2} \epsilon_{SA}t_{SA}\int_{SA}^{}|E_{A}^{\parallel}|^{2}dA
+		\end{align*}
 	\end{equation}
 \end{subequations}
 
 \section{The qubit as an LC-circuit}
-In order to obtain the energy contained in the complex transmon qubit system, it can be reduced to a simple LC-circuit. The capacitances created by the pads and the ground plane can be reduced to a single equivalent capacitor representing the capacitance of the entire system. The Josephson junction is represented by an inductor. What is left is an LC-circuit where the inductance is defined by the Josephson junction properties and the capacitance can be changed by changing the geometry of the system (the pads more specifically). The total energy stored by the qubit at resonance is then given by formula \eqref{eq:totalenergy}. Together with the calculated energies stored in the lossy layers, equation \eqref{eq:PartRatio} allows for the calculation of the participation ratios.
+In order to obtain the energy contained in the complex transmon qubit system, it is reduced to a simple LC-circuit. The capacitances created by the pads and the ground plane are reduced to a single equivalent capacitor representing the capacitance of the entire system. The Josephson junction is represented by an inductor. What is left is an LC-circuit where the inductance is defined by the Josephson junction properties and the capacitance can be changed by changing the geometry of the system (the pads more specifically). The total energy stored by the qubit at resonance is then given by formula \eqref{eq:totalenergy}. Together with the calculated energies stored in the lossy layers, equation \eqref{eq:PartRatio} allows for the calculation of the participation ratios.
 
 \section{Simplified model for CST}
-The relatively small thickness of the layers suggests that the impact they have on the electric field is small\todo{SOURCE needed?}. During simulation their impact is neglected and the layers are therefore omitted. The exclusion of thin lossy layers prevents the necessity for mesh elements with sub-nano meter size. This significantly reduces the number of mesh elements and allows for the simulation on the system in its entirety.
+The relatively small thickness of the layers suggests that the impact they have on the electric field is small\todo{SOURCE needed?}. During simulation their impact is neglected and the layers are therefore omitted. What is left is the Josephson junction, two PEC pads, the grounded PEC plane, and the substrate. The exclusion of thin lossy layers prevents the necessity for mesh elements with sub-nano meter size. This significantly reduces the number of mesh elements and allows for the simulation on the system in its entirety.
 
 \section{Meshing}
 To reduce simulation times the initial mesh is of critical importance. After each mesh refinement the fields are simulated anew. While CST is able to select regions of importance in the system where it should further refine the mesh, it can only do so after having simulated the fields. When establishing the initial mesh the importance of different regions of the system must be taken into account. Two \todo{two?} important steps taken to improve the initial mesh during this project are described below.   

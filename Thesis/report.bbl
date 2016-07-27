@@ -18,12 +18,6 @@ A.~Bruno, G.~de~Lange, S.~Asaad, K.~L. van~der Enden, N.~K. Langford, and
   Weiss, Wolf, and Xu]{LandoltBornstein1994}
 R.~Fl{\"u}kiger, Y.~S. Hariharan, R.~K{\"u}ntzler, L.~H. Luo, F.~Weiss,
   T.~Wolf, and Q.~J. Xu.
-\newblock Nb-h - nb-zr, nd - np {\textperiodcentered} nb-ti: Datasheet from
-  landolt-b{\"o}rnstein - group iii condensed matter {\textperiodcentered}
-  volume 21b2: ``nb-h - nb-zr, nd - np'' in springermaterials.
-\newblock URL
-  \url{http://materials.springer.com/lb/docs/sm_lbs_978-3-540-48230-7_53}.
-\newblock Copyright 1994 Springer-Verlag Berlin Heidelberg.
 
 \bibitem[Hagar and Cuffaro(2015)]{sep-qt-quantcomp}
 Amit Hagar and Michael Cuffaro.
@@ -32,9 +26,9 @@ Amit Hagar and Michael Cuffaro.
 \newblock URL
   \url{http://plato.stanford.edu/archives/sum2015/entries/qt-quantcomp/}.
 
-\bibitem[Ithier et~al.(2005)Ithier, Collin, Joyez, Meeson, Vion, Esteve,
-  Shnirman, Makhlin, and Schon]{Ithier2005}
-G.~Ithier, E.~Collin, P.~Joyez, P.J. Meeson, D.~Vion, F.~Esteve,
+\bibitem[Ithier et~al.(2005)Ithier, Collin, Joyez, Esteve, Shnirman, Makhlin,
+  and Schon]{Ithier2005}
+G.~Ithier, E.~Collin, P.J. andVion~D. Joyez, P.~andMeeson, F.~Esteve,
   D.~andChiarello, A.~Shnirman, J.~Makhlin, Y.~andSchriefl, and G.~Schon.
 \newblock Decoherence in a superconducting quantum bit circuit.
 \newblock \emph{Phys. Rev. Lett.}, Aug 2005.
