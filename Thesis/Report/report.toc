@@ -14,11 +14,12 @@
 \contentsline {subsection}{\numberline {2.4.2}Dielectric loss}{4}{subsection.2.4.2}
 \contentsline {section}{\numberline {2.5}The participation ratio}{4}{section.2.5}
 \contentsline {chapter}{\numberline {3}Model of the system}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}The qubit as an LC-circuit}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}Materials and dimensions}{5}{section.3.2}
-\contentsline {section}{\numberline {3.3}Lossy layers}{5}{section.3.3}
-\contentsline {section}{\numberline {3.4}Meshing}{6}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Ground}{6}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.1}Model of the transmon qubit}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Lossy layers}{5}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}The qubit as an LC-circuit}{6}{section.3.2}
+\contentsline {section}{\numberline {3.3}Simplified model for CST}{6}{section.3.3}
+\contentsline {section}{\numberline {3.4}Meshing}{7}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Ground}{7}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Pads}{7}{subsection.3.4.2}
 \contentsline {chapter}{\numberline {4}Results and Discussion}{9}{chapter.4}
 \contentsline {section}{\numberline {4.1}Interdigitated qubit}{10}{section.4.1}
@@ -29,7 +30,7 @@
 \contentsline {subsection}{\numberline {4.2.2}The participation ratios}{19}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Further Discussion}{21}{section.4.3}
 \contentsline {chapter}{\numberline {5}Conclusion}{23}{chapter.5}
-\contentsline {chapter}{Bibliography}{25}{appendix*.36}
+\contentsline {chapter}{Bibliography}{25}{appendix*.37}
 \contentsline {chapter}{Appendix \numberline {A}CST procedure}{27}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Creating a new project}{27}{section.1.A.1}
 \contentsline {section}{\numberline {A.2}The capacitance}{27}{section.1.A.2}

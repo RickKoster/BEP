@@ -13,32 +13,33 @@
 \BOOKMARK [2][-]{subsection.2.4.2}{Dielectric loss}{section.2.4}% 13
 \BOOKMARK [1][-]{section.2.5}{The participation ratio}{chapter.2}% 14
 \BOOKMARK [0][-]{chapter.3}{Model of the system}{}% 15
-\BOOKMARK [1][-]{section.3.1}{The qubit as an LC-circuit}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.2}{Materials and dimensions}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.3}{Lossy layers}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.4}{Meshing}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.4.1}{Ground}{section.3.4}% 20
-\BOOKMARK [2][-]{subsection.3.4.2}{Pads}{section.3.4}% 21
-\BOOKMARK [0][-]{chapter.4}{Results and Discussion}{}% 22
-\BOOKMARK [1][-]{section.4.1}{Interdigitated qubit}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.1.1}{The capacitance}{section.4.1}% 24
-\BOOKMARK [2][-]{subsection.4.1.2}{The participation ratios}{section.4.1}% 25
-\BOOKMARK [1][-]{section.4.2}{Parallel pad qubit}{chapter.4}% 26
-\BOOKMARK [2][-]{subsection.4.2.1}{The capacitance}{section.4.2}% 27
-\BOOKMARK [2][-]{subsection.4.2.2}{The participation ratios}{section.4.2}% 28
-\BOOKMARK [1][-]{section.4.3}{Further Discussion}{chapter.4}% 29
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 30
-\BOOKMARK [0][-]{appendix*.36}{Bibliography}{}% 31
-\BOOKMARK [0][-]{Appendix.1.A}{Appendix CST procedure}{}% 32
-\BOOKMARK [1][-]{section.1.A.1}{Creating a new project}{Appendix.1.A}% 33
-\BOOKMARK [1][-]{section.1.A.2}{The capacitance}{Appendix.1.A}% 34
-\BOOKMARK [2][-]{subsection.1.A.2.1}{Modeling}{section.1.A.2}% 35
-\BOOKMARK [2][-]{subsection.1.A.2.2}{Meshing}{section.1.A.2}% 36
-\BOOKMARK [2][-]{subsection.1.A.2.3}{Post processing}{section.1.A.2}% 37
-\BOOKMARK [2][-]{subsection.1.A.2.4}{Simulation setup}{section.1.A.2}% 38
-\BOOKMARK [1][-]{section.1.A.3}{The electric field}{Appendix.1.A}% 39
-\BOOKMARK [2][-]{subsection.1.A.3.1}{Modeling}{section.1.A.3}% 40
-\BOOKMARK [2][-]{subsection.1.A.3.2}{Meshing}{section.1.A.3}% 41
-\BOOKMARK [2][-]{subsection.1.A.3.3}{Simulation setup}{section.1.A.3}% 42
-\BOOKMARK [2][-]{subsection.1.A.3.4}{Exporting data}{section.1.A.3}% 43
-\BOOKMARK [0][-]{Appendix.1.B}{Appendix Matlab procedure}{}% 44
+\BOOKMARK [1][-]{section.3.1}{Model of the transmon qubit}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Lossy layers}{section.3.1}% 17
+\BOOKMARK [1][-]{section.3.2}{The qubit as an LC-circuit}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Simplified model for CST}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Meshing}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.4.1}{Ground}{section.3.4}% 21
+\BOOKMARK [2][-]{subsection.3.4.2}{Pads}{section.3.4}% 22
+\BOOKMARK [0][-]{chapter.4}{Results and Discussion}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Interdigitated qubit}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.1.1}{The capacitance}{section.4.1}% 25
+\BOOKMARK [2][-]{subsection.4.1.2}{The participation ratios}{section.4.1}% 26
+\BOOKMARK [1][-]{section.4.2}{Parallel pad qubit}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.2.1}{The capacitance}{section.4.2}% 28
+\BOOKMARK [2][-]{subsection.4.2.2}{The participation ratios}{section.4.2}% 29
+\BOOKMARK [1][-]{section.4.3}{Further Discussion}{chapter.4}% 30
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 31
+\BOOKMARK [0][-]{appendix*.37}{Bibliography}{}% 32
+\BOOKMARK [0][-]{Appendix.1.A}{Appendix CST procedure}{}% 33
+\BOOKMARK [1][-]{section.1.A.1}{Creating a new project}{Appendix.1.A}% 34
+\BOOKMARK [1][-]{section.1.A.2}{The capacitance}{Appendix.1.A}% 35
+\BOOKMARK [2][-]{subsection.1.A.2.1}{Modeling}{section.1.A.2}% 36
+\BOOKMARK [2][-]{subsection.1.A.2.2}{Meshing}{section.1.A.2}% 37
+\BOOKMARK [2][-]{subsection.1.A.2.3}{Post processing}{section.1.A.2}% 38
+\BOOKMARK [2][-]{subsection.1.A.2.4}{Simulation setup}{section.1.A.2}% 39
+\BOOKMARK [1][-]{section.1.A.3}{The electric field}{Appendix.1.A}% 40
+\BOOKMARK [2][-]{subsection.1.A.3.1}{Modeling}{section.1.A.3}% 41
+\BOOKMARK [2][-]{subsection.1.A.3.2}{Meshing}{section.1.A.3}% 42
+\BOOKMARK [2][-]{subsection.1.A.3.3}{Simulation setup}{section.1.A.3}% 43
+\BOOKMARK [2][-]{subsection.1.A.3.4}{Exporting data}{section.1.A.3}% 44
+\BOOKMARK [0][-]{Appendix.1.B}{Appendix Matlab procedure}{}% 45

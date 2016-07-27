@@ -1,10 +1,16 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
 The style file: tudelft-report.bst
 Database file #1: report.bib
+I was expecting a `,' or a `}'---line 113 of file report.bib
+ :  
+ :  editor={Fl{\"u}kiger, R.
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Too many commas in name 3 of "Ithier, G. and Collin, E. and Joyez, P. andMeeson, P.J. andVion, D. and Esteve, D. andChiarello, F. and Shnirman, A. and Makhlin, Y. andSchriefl, J. and Schon, G." for entry Ithier2005
 while executing---line 1347 of file tudelft-report.bst
 Name 4 in "Wenner, J. and Barends, R. and Bialczak, R. C. and Yu Chen, and Kelly, J. and Lucero, E. and Mariantoni, M. and Megrant, A. and O’Malley, P. J. J. and Sank, D. and Vainsencher, A. and Wang, H. and White, T. C. and Yin, Y. and Zhao, J. and Cleland, A. N. and Martinis, John M." has a comma at the end for entry Wenner2011
 while executing---line 1347 of file tudelft-report.bst
+Warning--empty year in LandoltBornstein1994
 Warning--empty journal in sep-qt-quantcomp
 Too many commas in name 3 of "Ithier, G. and Collin, E. and Joyez, P. andMeeson, P.J. andVion, D. and Esteve, D. andChiarello, F. and Shnirman, A. and Makhlin, Y. andSchriefl, J. and Schon, G." for entry Ithier2005
 while executing---line 1429 of file tudelft-report.bst
@@ -14,4 +20,4 @@ Name 4 in "Wenner, J. and Barends, R. and Bialczak, R. C. and Yu Chen, and Kelly
 while executing---line 1429 of file tudelft-report.bst
 Name 4 in "Wenner, J. and Barends, R. and Bialczak, R. C. and Yu Chen, and Kelly, J. and Lucero, E. and Mariantoni, M. and Megrant, A. and O’Malley, P. J. J. and Sank, D. and Vainsencher, A. and Wang, H. and White, T. C. and Yin, Y. and Zhao, J. and Cleland, A. N. and Martinis, John M." has a comma at the end for entry Wenner2011
 while executing---line 1429 of file tudelft-report.bst
-(There were 6 error messages)
+(There were 7 error messages)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,6 +13,11 @@ A.~Bruno, G.~de~Lange, S.~Asaad, K.~L. van~der Enden, N.~K. Langford, and
   treatment and deep etching of silicon substrate.
 \newblock \emph{Applied Physics Letters}, 106, February 2011.
 \newblock \doi{10.1063/1.4919761}.
+
+\bibitem[Fl{\"u}kiger et~al.()Fl{\"u}kiger, Hariharan, K{\"u}ntzler, Luo,
+  Weiss, Wolf, and Xu]{LandoltBornstein1994}
+R.~Fl{\"u}kiger, Y.~S. Hariharan, R.~K{\"u}ntzler, L.~H. Luo, F.~Weiss,
+  T.~Wolf, and Q.~J. Xu.
 
 \bibitem[Hagar and Cuffaro(2015)]{sep-qt-quantcomp}
 Amit Hagar and Michael Cuffaro.
