@@ -11,9 +11,9 @@ XIBMSlotSize = [500 533 566 600 700 800];
 XIBMPadSep60fF = [5 10 20 50];
 
 
-X = XIBMPadSep60fF;
-XAxisLabel = 'Pad Separation [\mum]';
-Y = IBMPadSep60fF;
+X = XSlotSize;
+XAxisLabel = 'Slot Size [\mum]';
+Y = SlotSize;
 %%
 figure
 clm1 = 'bs-';   clm2 = 'gd-';   clm3 = 'mp-';   clm4 = 'rh-';
@@ -39,7 +39,7 @@ eval(['plot(X,Y(:,4),' PallSpec ')']);
 
 
 legend('P ma', 'P ms', 'P sa', 'P all', 'Location', 'bestoutside');
-legend off
+%legend off
 xlabel(XAxisLabel);
 ylabel('Participation ratio'); 
 hold off

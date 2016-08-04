@@ -4,25 +4,13 @@ Illegal, another \bibstyle command---line 21 of file report.aux
  : \bibstyle
  :          {unsrtnat}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 193 of file report.aux
- : \bibstyle
- :          {unsrtnat}
-I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 206 of file report.aux
- : \bibstyle
- :          {unsrtnat}
-I'm skipping whatever remains of this command
 Database file #1: report.bib
-Warning--I'm ignoring LandoltBornstein1994's extra "note" field
---line 118 of file report.bib
-Warning--I'm ignoring LandoltBornstein1994's extra "note" field
---line 119 of file report.bib
+Warning--I didn't find a database entry for ""
 Name 4 in "Wenner, J. and Barends, R. and Bialczak, R. C. and Yu Chen, and Kelly, J. and Lucero, E. and Mariantoni, M. and Megrant, A. and O’Malley, P. J. J. and Sank, D. and Vainsencher, A. and Wang, H. and White, T. C. and Yin, Y. and Zhao, J. and Cleland, A. N. and Martinis, John M." has a comma at the end for entry Wenner2011
 while executing---line 1347 of file tudelft-report.bst
-Warning--empty year in LandoltBornstein1994
 Warning--empty journal in sep-qt-quantcomp
 Name 4 in "Wenner, J. and Barends, R. and Bialczak, R. C. and Yu Chen, and Kelly, J. and Lucero, E. and Mariantoni, M. and Megrant, A. and O’Malley, P. J. J. and Sank, D. and Vainsencher, A. and Wang, H. and White, T. C. and Yin, Y. and Zhao, J. and Cleland, A. N. and Martinis, John M." has a comma at the end for entry Wenner2011
 while executing---line 1429 of file tudelft-report.bst
 Name 4 in "Wenner, J. and Barends, R. and Bialczak, R. C. and Yu Chen, and Kelly, J. and Lucero, E. and Mariantoni, M. and Megrant, A. and O’Malley, P. J. J. and Sank, D. and Vainsencher, A. and Wang, H. and White, T. C. and Yin, Y. and Zhao, J. and Cleland, A. N. and Martinis, John M." has a comma at the end for entry Wenner2011
 while executing---line 1429 of file tudelft-report.bst
-(There were 6 error messages)
+(There were 4 error messages)

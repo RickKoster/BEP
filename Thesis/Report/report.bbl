@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,16 +14,12 @@ A.~Bruno, G.~de~Lange, S.~Asaad, K.~L. van~der Enden, N.~K. Langford, and
 \newblock \emph{Applied Physics Letters}, 106, February 2011.
 \newblock \doi{10.1063/1.4919761}.
 
-\bibitem[Fl{\"u}kiger et~al.()Fl{\"u}kiger, Hariharan, K{\"u}ntzler, Luo,
-  Weiss, Wolf, and Xu]{LandoltBornstein1994}
-R.~Fl{\"u}kiger, Y.~S. Hariharan, R.~K{\"u}ntzler, L.~H. Luo, F.~Weiss,
-  T.~Wolf, and Q.~J. Xu.
-\newblock Nb-h - nb-zr, nd - np {\textperiodcentered} nb-ti: Datasheet from
-  landolt-b{\"o}rnstein - group iii condensed matter {\textperiodcentered}
-  volume 21b2: ``nb-h - nb-zr, nd - np'' in springermaterials.
-\newblock URL
-  \url{http://materials.springer.com/lb/docs/sm_lbs_978-3-540-48230-7_53}.
-\newblock Copyright 1994 Springer-Verlag Berlin Heidelberg.
+\bibitem[Cochran and Mapother(1958)]{Cochran1958}
+J.F. Cochran and D.E. Mapother.
+\newblock Superconducting transition in aluminum.
+\newblock \emph{Phys. Rev}, 111:\penalty0 132, July 1958.
+\newblock \doi{10.1103/PhysRev.111.132}.
+\newblock URL \url{http://dx.doi.org/10.1103/PhysRev.111.132}.
 
 \bibitem[Hagar and Cuffaro(2015)]{sep-qt-quantcomp}
 Amit Hagar and Michael Cuffaro.
@@ -59,6 +55,16 @@ John~M. Martinis, K.~B. Cooper, R.~McDermott, Matthias Steffen, Markus Ansmann,
 \newblock \doi{10.1103/PhysRevLett.95.210503}.
 \newblock URL \url{http://link.aps.org/doi/10.1103/PhysRevLett.95.210503}.
 
+\bibitem[Ristè et~al.(2014)Ristè, Poletto, Huang, Bruno, Vesterinen, Saira,
+  and L.]{Riste2014}
+D.~Ristè, S.~Poletto, M.-Z. Huang, A.~Bruno, V.~Vesterinen, O.-P. Saira, and
+  DiCarlo L.
+\newblock Detecting bit-flip errors in a logical qubit using stabilizer
+  measurements.
+\newblock \emph{Nature Communications}, Nov 2014.
+\newblock \doi{10.1038/ncomms7983}.
+\newblock URL \url{https://arxiv.org/abs/1411.5542}.
+
 \bibitem[Wang et~al.(2015)Wang, Axline, Gao, Brecht, Frunzio, Devoret, and
   Schoelkopf]{Wang2015}
 C.~Wang, C.~Axline, Y.~Y. Gao, T.~Brecht, L.~Frunzio, M.~H. Devoret, and R.~J.
@@ -78,5 +84,13 @@ J.~Wenner, R.~Barends, R.~C. Bialczak, Yu~Chen, J.~Kelly, E.~Lucero,
 \newblock \emph{Applied Physics Letters}, 99, 2011.
 \newblock \doi{10.1063/1.3637047}.
 \newblock URL \url{http://dx.doi.org/10.1063/1.3637047}.
+
+\bibitem[You and Nori(2011)]{You2011}
+J.Q. You and F~Nori.
+\newblock Atomic physics and quantum optics using superconducting circuits.
+\newblock \emph{Nature}, 474:\penalty0 589--597, June 2011.
+\newblock \doi{10.1038/nature10122}.
+\newblock URL
+  \url{http://www.nature.com/nature/journal/v474/n7353/full/nature10122.html}.
 
 \end{thebibliography}

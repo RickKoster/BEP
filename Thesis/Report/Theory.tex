@@ -1,10 +1,33 @@
 \chapter{Theory}
 
 \section{The transmon qubit}
-The qubit under investigation during this project is the so called transmon qubit. A traditional transmon qubit consists of a pair of Josephson junctions connected to two superconducting pads. The structure is surrounded by a grounded metal plane. Other parts of the structure are the transmission line resonator, the quantum bus resonator, the readout resonator, and the control lines. 
+The qubit under investigation during this project is the so called transmon qubit. A traditional transmon qubit consists of a pair of Josephson junctions connected to two superconducting pads. The structure is surrounded by a grounded metal plane. Other parts of the structure are the readout resonator, the coupling resonator, the flux control, and the feedline. They are Co-Planar Waveguides (CPW) enabling readout, coupling to other qubits, and frequency control. These parts will not be considered during simulation of the qubits and therefore not described in detail here. An overview of a transmon qubit can be found in figure \ref{fig:transmonblueprint} \cite{Riste2014}.
 
-\section{LC-circuits}
-The transmon qubit can be treated as a simple LC-circuit. The Josephson junction is replaced by an inductor and the different capacitances are replaced by an single equivalent capacitor. The resulting simplified system can be seen in figure~\ref{fig:LCcircuit}. The energy in an LC-circuit is stored in the electric field of the capacitor and the magnetic field of the inductor. As the circuit resonates the energy is moved between the two with a certain frequency
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=1]{Figures/Transmon/transmonblueprint_zoomed2}
+		\caption{An overview of the transmon qubit with two superconducting pads in the centre. The qubit is connected to several structures: the readout resonator (A), the coupling resonator (B), the flux control (C), and the feedline (D). The location of the Josephson junction (E) is also indicated.}
+		\label{fig:transmonblueprint}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=1]{Figures/Transmon/JJ}
+		\caption{The Josephson junction. Two superconducting electrodes (Al) separated by an insulator (AlOx) on a substrate (Si)}
+		\label{fig:JJ}
+	\end{center}
+\end{figure}
+
+A Josephson junction consists of two layers of superconducting material separated by an insulating layer. A simple representation of the Josephson junction can be found in figure \ref{fig:JJ}. It behaves like a non-linear inductor \cite{You2011}.
+The transmon qubit can therefore be treated as a simple LC-circuit. The Josephson junction is replaced by an inductor and the different capacitances are replaced by an single equivalent capacitor. The resulting simplified system can be seen in figure~\ref{fig:LCcircuit}. The energy in an LC-circuit is stored in the electric field of the capacitor and the magnetic field of the inductor. As the circuit resonates the energy is moved between the two with a certain frequency.
+This resonance frequency is given by formula \eqref{eq:ResonanceFrequency} below.
+
+\begin{equation} \label{eq:ResonanceFrequency}
+f_{0}=\frac{1}{2\pi\sqrt{LC}}
+\end{equation}
+Where \(L\) is the inductance and \(C\) is the capacitance. Specific resonance frequencies can be targeted by changing the qubit's design.
+
 \begin{figure}
 	\begin{center}
 		\begin{circuitikz}
@@ -30,13 +53,7 @@ W_{tot}=\frac{1}{2}CV_{max}^{2}
 \end{equation}
 Where \(C\) is the total capacitance of the system and \(V_{max}\) the maximum voltage over capacitor. Both the capacitance and the voltage will be retrieved from the simulation.
 
-\subsection{Resonance frequency of an LC-circuit}
-LC-circuits have a resonance frequency given by formula \eqref{eq:ResonanceFrequency} below.
 
-\begin{equation} \label{eq:ResonanceFrequency}
-f_{0}=\frac{1}{2\pi\sqrt{LC}}
-\end{equation}
-Where \(L\) is the inductance and \(C\) is the capacitance. Specific resonance frequencies can be targeted by changing the qubit's design.
 
 \section{Electric fields}
 Of specific interest is the manner in which the circuit's energy is stored in its electric field. The distribution of the field determines where the energy is stored. This distribution will be retrieved via simulation. 
@@ -67,7 +84,7 @@ In order for the qubit to be coherent for a sufficiently long time period, sourc
 The source in question during this project is the loss through dielectric materials in the system. It is believed to be a prominent, if not limiting source of decoherence \cite{Koch2007}\cite{PhysRevLett.95.210503}. 
  
 \subsection{Perfect Electric Conductor}
-As the qubit is supercooled to temperatures of only a few Kelvin, the metal in the qubit is treated as a Perfect Electric Conductor (PEC). As the LC-circuit resonates, this means the flowing current wont dissipate any energy through resistance. 
+As the qubit is supercooled to a temperature of only 10 mK, the metal in the qubit is treated as a Perfect Electric Conductor (PEC). As the LC-circuit resonates, this means the flowing current wont dissipate any energy through resistance. 
  
 \subsection{Dielectric loss}
 During production of qubits, different procedures introduce lossy materials to the structure. An important property of each of these materials is their permittivity. It will determine the strength of the field and the energy stored inside the layers (see formula \eqref{eq:energy}). Different layers on distinct material interfaces created during certain production steps can have different dielectric constants.   

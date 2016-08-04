@@ -3,45 +3,43 @@
 \contentsline {section}{\numberline {1.1}Quantum computing and quantum bits}{1}{section.1.1}
 \contentsline {chapter}{\numberline {2}Theory}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}The transmon qubit}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}LC-circuits}{3}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Energy in an LC-circuit}{3}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Resonance frequency of an LC-circuit}{3}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Electric fields}{4}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Boundary conditions}{4}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Stored energy}{4}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Sources of decoherence}{4}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Perfect Electric Conductor}{4}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Dielectric loss}{4}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}The participation ratio}{4}{section.2.5}
-\contentsline {chapter}{\numberline {3}Model of the system}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Model of the transmon qubit}{5}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Lossy layers}{5}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}The qubit as an LC-circuit}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}Simplified model for CST}{7}{section.3.3}
-\contentsline {section}{\numberline {3.4}Meshing}{7}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Ground}{7}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Pads}{7}{subsection.3.4.2}
-\contentsline {chapter}{\numberline {4}Results and Discussion}{9}{chapter.4}
-\contentsline {section}{\numberline {4.1}Interdigitated qubit}{10}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}The capacitance}{10}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}The participation ratios}{13}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Parallel pad qubit}{16}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}The capacitance}{16}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}The participation ratios}{19}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Further Discussion}{21}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion}{23}{chapter.5}
-\contentsline {chapter}{Bibliography}{25}{appendix*.37}
-\contentsline {chapter}{Appendix \numberline {A}CST procedure}{27}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Creating a new project}{27}{section.1.A.1}
-\contentsline {section}{\numberline {A.2}The capacitance}{27}{section.1.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Modeling}{28}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Meshing}{28}{subsection.1.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Post processing}{28}{subsection.1.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Simulation setup}{29}{subsection.1.A.2.4}
-\contentsline {section}{\numberline {A.3}The electric field}{29}{section.1.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Modeling}{30}{subsection.1.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Meshing}{31}{subsection.1.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Simulation setup}{31}{subsection.1.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}Exporting data}{31}{subsection.1.A.3.4}
-\contentsline {chapter}{Appendix \numberline {B}Matlab procedure}{33}{Appendix.1.B}
+\contentsline {subsection}{\numberline {2.1.1}Energy in an LC-circuit}{4}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Electric fields}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Boundary conditions}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Stored energy}{4}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Sources of decoherence}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Perfect Electric Conductor}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Dielectric loss}{5}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}The participation ratio}{5}{section.2.4}
+\contentsline {chapter}{\numberline {3}Model of the system}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Model of the transmon qubit}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Lossy layers}{7}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}The qubit as an LC-circuit}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Simplified model for CST}{9}{section.3.3}
+\contentsline {section}{\numberline {3.4}Meshing}{9}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Ground}{9}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Pads}{9}{subsection.3.4.2}
+\contentsline {chapter}{\numberline {4}Results and Discussion}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Interdigitated qubit}{12}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The capacitance}{12}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}The participation ratios}{15}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Parallel pad qubit}{18}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}The capacitance}{18}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}The participation ratios}{21}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Further Discussion}{24}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{27}{chapter.5}
+\contentsline {chapter}{Bibliography}{29}{appendix*.40}
+\contentsline {chapter}{Appendix \numberline {A}CST procedure}{31}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Creating a new project}{31}{section.1.A.1}
+\contentsline {section}{\numberline {A.2}The capacitance}{31}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Modeling}{32}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Meshing}{32}{subsection.1.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Post processing}{32}{subsection.1.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Simulation setup}{33}{subsection.1.A.2.4}
+\contentsline {section}{\numberline {A.3}The electric field}{33}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Modeling}{34}{subsection.1.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Meshing}{35}{subsection.1.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Simulation setup}{35}{subsection.1.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}Exporting data}{35}{subsection.1.A.3.4}
+\contentsline {chapter}{Appendix \numberline {B}Matlab procedure}{37}{Appendix.1.B}
 \contentsfinish 

@@ -3,10 +3,10 @@ This chapter will start by giving a model of the transmon qubit. This model will
 %reduce simulation times and \ldots.
  
 \section{Model of the transmon qubit}
-The model of the transmon qubit consists of a Josephson junction, two superconducting pads, a grounded superconducting pad surrounding the junction and pads, and the substrate on which everything is mounted. Furthermore, the material interfaces all have a lossy layer deposited on them during production. These layers will be discussed separately in a section below. The alloy used for the pads and ground is Niobium-titanium (NbTi) which is superconducting when cooled below 9.2 Kelvin \cite{LandoltBornstein1994} and will be treated as a Perfect Electric Conductor (PEC). The substrate consist of silicon, which has a dielectric constant of 11.45 at these temperatures \todo{citation}. 
+The model of the transmon qubit consists of a Josephson junction, two superconducting pads, a grounded superconducting pad surrounding the junction and pads, and the substrate on which everything is mounted. Furthermore, the material interfaces all have a lossy layer on them, an unwanted by-product of the production process. These layers will be discussed separately in a section below. The leads of the Josephson junction (see figure \ref{fig:JJ}) are made out of Aluminium which has a critical temperature of 1.2 Kelvin \cite{Cochran1958}. The alloy used for the pads and ground is Niobium-titanium-nitride (NbTiN) which is superconducting when cooled below 14 Kelvin \cite{}. These metals will be treated as a Perfect Electric Conductor (PEC). The substrate consist of silicon, which has a dielectric constant of 11.45 at these temperatures \todo{citation}. 
 
 \subsection{Lossy layers}
-The lossy layers present on the different material interfaces are assumed to have an equal thickness of around 3 nm \cite{Wenner2011}. Different layers do have distinct material compositions. The dominant materials are Niobium Oxides (NbO), Silicon Oxides (SiO), and Silicon Nitrides (SiN) for the Metal-Air (MA), Substrate-Air (SA), and Metal-Substrate (MS) interfaces respectively. These materials have different dielectric constants; 10 for Niobium Oxides, 7.5 for Silicon Nitrides, and 3.9 for the Silicon Oxides. A simple representation of the structure can be seen in figure \ref{fig:model}. It displays a cross-section of the qubit near the edge of a superconducting pad. Certain choices of materials and dimensions are valid for all qubit designs in this project. The thickness of the superconducting pads is always 10 \(\mu\)m and height of the silicon substrate is 520 \(\mu\)m. An overview of the above is listed in table \ref{table:standard_parameters} below.
+The lossy layers present on the different material interfaces are assumed to have an equal thickness of 3 nm \cite{Wenner2011}. Different layers do have distinct material compositions. The dominant materials are Niobium Oxides (NbO), Silicon Oxides (SiO), and Silicon Nitrides (SiN) for the Metal-Air (MA), Substrate-Air (SA), and Metal-Substrate (MS) interfaces respectively. These materials have different dielectric constants; 10 for Niobium Oxides, 7.5 for Silicon Nitrides, and 3.9 for the Silicon Oxides. A simple representation of the structure can be seen in figure \ref{fig:model}. It displays a cross-section of the qubit near the edge of a superconducting pad. Certain choices of materials and dimensions are valid for all qubit designs in this project. The thickness of the superconducting pads is always 0.2 \(\mu\)m and height of the silicon substrate is 520 \(\mu\)m. An overview of the above is listed in table \ref{table:standard_parameters} below.
 
 \begin{figure}
 	\begin{center}
@@ -21,7 +21,7 @@ The lossy layers present on the different material interfaces are assumed to hav
 		\begin{tabular}{ | l || c | c | c |}
 			\hline
 			& Material & Thickness & Dielectric constant \\ \hline
-			Pads & PEC & 10 \(\mu\)m & - \\
+			Pads & PEC & 0.2 \(\mu\)m & - \\
 			Substrate & Silicon & 520 \(\mu\)m & 11.45 \\
 			Ground & PEC & - & - \\
 			MA & NbO & \textasciitilde 3 nm & 10 \\
@@ -34,7 +34,14 @@ The lossy layers present on the different material interfaces are assumed to hav
 	\label{table:standard_parameters}
 \end{table}
 
-The electric field retrieved from the simulation will be that on 'outside' of the interfaces of the lossy layers. It is assumed to be perpendicular on the surface of the superconducting pad. Using formulas \eqref{eq:ContinuityEqA} and \eqref{eq:ContinuityEqB}, combined with the above assumptions, the electric field inside the lossy layers can be determined using formulas \eqref{eq:LossyLayerFieldsA} through \eqref{eq:LossyLayerFieldsD}.
+The electric field retrieved from the simulation will be that on 'outside' of the interfaces of the lossy layers. A visualization of this at the Metal-Air interface can be seen in figure \ref{fig:approx} It is assumed to be perpendicular on the surface of the superconducting pad. Using formulas \eqref{eq:ContinuityEqA} and \eqref{eq:ContinuityEqB}, combined with the above assumptions, the electric field inside the lossy layers can be determined using formulas \eqref{eq:LossyLayerFieldsA} through \eqref{eq:LossyLayerFieldsD}.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=.5]{Figures/approx}
+	\caption{An illustration of electric field retrieved from the simulation and the field needed to calculate the participation ratios. \(E_{A}\) is retrieved from the simulation whereas \(E_{MA}\) is required for calculation. The lossy layer is blue. The superconducting pad is depicted in dark grey.}
+	\label{fig:approx}
+\end{figure}
 
 \begin{subequations}\label{eq:LossyLayerFields}
 	\begin{equation} \label{eq:LossyLayerFieldsA}
@@ -51,36 +58,39 @@ The electric field retrieved from the simulation will be that on 'outside' of th
 	\end{equation}
 \end{subequations}
 
-Where \(E_{A}^{\bot}\), \(E_{S}^{\bot}\), \(E_{A}^{\parallel}\) and \(E_{S}^{\bot}\) are the components of the field at specific interface, which are retrieved from the simulation. With equations \eqref{eq:LossyLayerFields} the energy stored in the electric field inside the layers can calculated by rewriting equation \eqref{eq:energy_layer} as follows:
+Where \(E_{A}^{\bot}\), \(E_{S}^{\bot}\), \(E_{A}^{\parallel}\) and \(E_{S}^{\bot}\) are the components of the field at specific interfaces, which are retrieved from the simulation. With equations \eqref{eq:LossyLayerFields} the energy stored in the electric field inside the layers can calculated by rewriting equation \eqref{eq:energy_layer} as follows:
 
 \begin{subequations}\label{eq:LossyLayerEnergy}
 	\begin{equation} \label{eq:LossyLayerEnergyA}
-		\begin{align*}
+		\begin{aligned}
 			W_{MA} &=\frac{1}{2}\epsilon_{MA}t_{MA}\int_{MA}^{}|E_{MA}|^{2}dA \\
 				   &=\frac{1}{2}\epsilon_{MA}t_{MA}\int_{MA}^{}|\frac{E_{A}^{\bot}}{\epsilon_{MA}}|^{2}dA \\
 				   &=\frac{1}{2}\epsilon_{MA}^{-1}t_{MA}\int_{MA}^{}|E_{A}^{\bot}|^{2}dA
-		\end{align*}
+		\end{aligned}
 	\end{equation}	
 	\begin{equation} \label{eq:LossyLayerEnergyB}
-		\begin{align*}
+		\begin{aligned}
 			W_{MS} &=\epsilon_{MS}\int_{MS}^{}|E_{MS}|^{2} \\
 			&=\epsilon_{MS}\int_{MS}^{}|\frac{E_{S}^{\bot}\epsilon_{S}}{\epsilon_{MS}}|^{2}\\ 
 			&=\frac{1}{2}\frac{\epsilon_{S}^{2}}{\epsilon_{MS}}t_{MS}\int_{MS}^{}|E_{S}^{\bot}|^{2} 
-		\end{align*}
+		\end{aligned}
 	\end{equation}
 	\begin{equation}\label{eq:LossyLayerEnergyC}
-		\begin{align*}
+		\begin{aligned}
 			W_{SA} &=\frac{1}{2}\epsilon_{SA}^{}t_{SA}\int_{SA}^{}(|E_{SA}^{\bot}|^{2} + |E_{SA}^{\parallel}|^{2})\\
 			&=\frac{1}{2}\epsilon_{SA}^{-1}t_{SA}\int_{SA}^{}|E_{A}^{\bot}|^{2} +\frac{1}{2} \epsilon_{SA}t_{SA}\int_{SA}^{}|E_{A}^{\parallel}|^{2}dA
-		\end{align*}
+		\end{aligned}
 	\end{equation}
 \end{subequations}
 
+A similar derivation was done by Wenner et al. in their research on coplanar waveguide resonators \cite{Wenner2011}. 
+
 \section{The qubit as an LC-circuit}
-In order to obtain the energy contained in the complex transmon qubit system, it is reduced to a simple LC-circuit. The capacitances created by the pads and the ground plane are reduced to a single equivalent capacitor representing the capacitance of the entire system. The Josephson junction is represented by an inductor. What is left is an LC-circuit where the inductance is defined by the Josephson junction properties and the capacitance can be changed by changing the geometry of the system (the pads more specifically). The total energy stored by the qubit at resonance is then given by formula \eqref{eq:totalenergy}. Together with the calculated energies stored in the lossy layers, equation \eqref{eq:PartRatio} allows for the calculation of the participation ratios.
+In order to obtain the energy contained in the transmon qubit system, it is reduced to a simple LC-circuit. The capacitances created by the pads and the ground plane are reduced to a single equivalent capacitor representing the capacitance of the entire system. The Josephson junction is represented by an inductor. What is left is an LC-circuit where the inductance is defined by the Josephson junction properties and the capacitance can be changed by changing the geometry of the system (the pads more specifically). The total energy stored by the qubit at resonance is then given by formula \eqref{eq:totalenergy}. Together with the calculated energies stored in the lossy layers, equation \eqref{eq:PartRatio} allows for the calculation of the participation ratios.
 
 \section{Simplified model for CST}
-The relatively small thickness of the layers suggests that the impact they have on the electric field is small\todo{SOURCE needed?}. During simulation their impact is neglected and the layers are therefore omitted. What is left is the Josephson junction, two PEC pads, the grounded PEC plane, and the substrate. The exclusion of thin lossy layers prevents the necessity for mesh elements with sub-nano meter size. This significantly reduces the number of mesh elements and allows for the simulation on the system in its entirety.
+The relatively small thickness of the layers suggests that the impact they have on the electric field distribution is small\todo{SOURCE needed?}. During simulation their impact is neglected and the layers are therefore omitted. %What is left is the Josephson junction, two PEC pads, the grounded PEC plane, and the substrate. 
+The exclusion of thin lossy layers prevents the necessity for mesh elements with sub-nano meter size. This significantly reduces the number of mesh elements and allows for the simulation on the system in its entirety.
 
 \section{Meshing}
 To reduce simulation times the initial mesh is of critical importance. After each mesh refinement the fields are simulated anew. While CST is able to select regions of importance in the system where it should further refine the mesh, it can only do so after having simulated the fields. When establishing the initial mesh the importance of different regions of the system must be taken into account. Two \todo{two?} important steps taken to improve the initial mesh during this project are described below.   
@@ -89,7 +99,7 @@ To reduce simulation times the initial mesh is of critical importance. After eac
 \subsection{Ground}
 To reduce the number of mesh elements, the ground pad is replaced by a sheet of PEC with zero thickness. Considering the field in the ground region is small compared to the field at the edges of the pads its contribution to the participation ratio is also small. Investing more computation time on the ground plane region by increasing the density of mesh elements there, would therefore also have limited impact on the participation ratio.
 \subsection{Pads}
-The pads being the source of the electric field, it is to be expected that the intensity will be greatest in this region. Furthermore, electric field lines tend to have a higher density at the edges of a metal \todo{Source or reference to Theory}. Considering this, the intensity of the electric field in the entire system is expected to be greatest around the edges of the metal pads. The initial mesh should reflect this by being very fine in these regions. In order to achieve this the edges of the metal pads are rounded as in figure \ref{fig:blending4}. A comparison between the resulting mesh and a standard initial mesh is depicted in figure \ref{fig:TotalMesh}. The difference is significant; an increase of mesh element count from 10776 to 590570. It would take CST around 8 iterations to achieve similar mesh element counts. The exact steps taken to achieve this in CST can be found in appendix \ref{appendix:CST_procedure}. 
+The pads being the source of the electric field, it is to be expected that the intensity will be greatest in this region. Furthermore, electric field lines tend to have a higher density at the edges of a metal \todo{Source or reference to Theory}. Considering this, the intensity of the electric field in the entire system is expected to be greatest around the edges of the metal pads. The initial mesh should reflect this by being very fine in these regions. In order to achieve this the edges of the metal pads are rounded as in figure \ref{fig:blending4}. A comparison between the resulting mesh and a standard initial mesh is depicted in figure \ref{fig:TotalMesh}. The difference is significant; an increase of mesh element count from 10776 to 590570. Depending on the size of the system this saves around 1.5 hours of computation time. The exact steps taken to achieve this in CST can be found in appendix \ref{appendix:CST_procedure}. 
 
 \begin{figure}
 	\centering
@@ -100,7 +110,7 @@ The pads being the source of the electric field, it is to be expected that the i
 
 \begin{figure}
 	\begin{tabular}{c c}
-		\subfloat[Simple mesh] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_simple_cropped} }}
+		\subfloat[Simple mesh] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_simple_cropped2} }}
 		& \subfloat[Refined mesh] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_refined_cropped} }} \\
 		\subfloat[Simple mesh, junction] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_simple_zoomed_highlighted} }}
 		& \subfloat[Refined mesh, junction] {{\includegraphics[width = \textwidth/2]{Figures/Anistropic_meshing/IBM_refined_zoomed_highlighted} }}
